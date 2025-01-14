@@ -16,6 +16,17 @@ const Toolbar = () => {
             alt="Hypersight Logo"
             className="h-12"
           />
+          <nav className="hidden md:flex items-center gap-6">
+            <a href="#features" className="text-white/80 hover:text-white transition-colors">
+              Features
+            </a>
+            <a href="#pricing" className="text-white/80 hover:text-white transition-colors">
+              Pricing
+            </a>
+            <a href="#hypertype" className="text-white/80 hover:text-white transition-colors">
+              Hypertype
+            </a>
+          </nav>
         </div>
         <Button
           className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-2"
