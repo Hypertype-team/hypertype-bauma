@@ -16,19 +16,6 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="mb-6"
-          >
-            <img
-              src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
-              alt="Hypersight Logo"
-              className="h-20 mx-auto mb-8"
-            />
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
