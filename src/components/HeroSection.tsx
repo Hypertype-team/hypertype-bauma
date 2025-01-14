@@ -23,7 +23,7 @@ const HeroSection = () => {
             className="mb-6"
           >
             <img
-              src="/lovable-uploads/8cb2e210-467d-406d-9b3d-c747f396dada.png"
+              src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
               alt="Hypersight Logo"
               className="h-20 mx-auto mb-8"
             />

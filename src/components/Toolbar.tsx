@@ -12,7 +12,7 @@ const Toolbar = () => {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <img
-            src="/lovable-uploads/8cb2e210-467d-406d-9b3d-c747f396dada.png"
+            src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
             alt="Hypersight Logo"
             className="h-16"
           />
