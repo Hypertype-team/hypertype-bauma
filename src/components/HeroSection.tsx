@@ -42,15 +42,27 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto"
           >
             Use your support tickets to know exactly what to focus on with a data-driven approach
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="text-lg text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed"
+          >
+            Your support tickets are more than tasks—they're a treasure trove of customer insights. 
+            Hypersight analyzes and synthesizes your support tickets, generating powerful reports 
+            that help you make data-driven decisions, prioritize with confidence, and stay 
+            laser-focused on what matters most.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 1 }}
             className="flex justify-center gap-4"
           >
             <Button
