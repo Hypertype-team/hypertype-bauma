@@ -26,6 +26,7 @@ const IntegrationsSection = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+              style={{ transform: 'translate(-50%, -50%)' }}
             >
               <div className="w-32 h-32 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
                 <img
