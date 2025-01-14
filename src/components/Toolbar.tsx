@@ -14,7 +14,7 @@ const Toolbar = () => {
           <img
             src="/lovable-uploads/8cb2e210-467d-406d-9b3d-c747f396dada.png"
             alt="Hypersight Logo"
-            className="h-10"
+            className="h-16"
           />
         </div>
         <Button
