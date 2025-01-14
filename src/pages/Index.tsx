@@ -16,8 +16,15 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white">
       <Toolbar />
       <HeroSection />
-      <FeaturesSection />
-      <PricingSection />
+      <div id="features">
+        <FeaturesSection />
+      </div>
+      <div id="pricing">
+        <PricingSection />
+      </div>
+      <div id="hypertype">
+        {/* Hypertype section placeholder */}
+      </div>
     </div>
   );
 };

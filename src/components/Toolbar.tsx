@@ -1,7 +1,17 @@
-import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
 
 const Toolbar = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -14,20 +24,29 @@ const Toolbar = () => {
           <img
             src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
             alt="Hypersight Logo"
-            className="h-12"
+            className="h-8"
           />
         </div>
         <div className="flex items-center gap-8">
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-white/80 hover:text-white transition-colors">
+            <button 
+              onClick={() => scrollToSection('features')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Features
-            </a>
-            <a href="#pricing" className="text-white/80 hover:text-white transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('pricing')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Pricing
-            </a>
-            <a href="#hypertype" className="text-white/80 hover:text-white transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('hypertype')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Hypertype
-            </a>
+            </button>
           </nav>
           <Button
             className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-2"
