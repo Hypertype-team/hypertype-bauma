@@ -42,12 +42,14 @@ const Toolbar = () => {
             >
               Pricing
             </button>
-            <button 
-              onClick={() => window.location.href = 'https://www.hypertype.ai/'} 
+            <a 
+              href="https://www.hypertype.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/80 hover:text-white transition-colors text-sm font-medium"
             >
               Hypertype
-            </button>
+            </a>
           </nav>
           <Button
             className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-2 text-sm font-medium"
