@@ -19,7 +19,7 @@ const Toolbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-black/30 border-b border-white/10"
     >
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center justify-center w-48">
           <img
             src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
@@ -31,31 +31,31 @@ const Toolbar = () => {
           <nav className="hidden md:flex items-center gap-6">
             <button 
               onClick={() => scrollToSection('features')} 
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white/80 hover:text-white transition-colors text-sm font-medium"
             >
               Features
             </button>
             <button 
               onClick={() => scrollToSection('pricing')} 
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white/80 hover:text-white transition-colors text-sm font-medium"
             >
               Pricing
             </button>
             <button 
               onClick={() => window.location.href = 'https://www.hypertype.ai/'} 
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white/80 hover:text-white transition-colors text-sm font-medium"
             >
               Hypertype
             </button>
             <button 
               onClick={() => window.location.href = '/demo'} 
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white/80 hover:text-white transition-colors text-sm font-medium"
             >
               Demo
             </button>
           </nav>
           <Button
-            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-2"
+            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-2 text-sm font-medium"
             onClick={() => window.location.href = 'https://hypertype.fillout.com/talktosales?_gl=1*1e9dlxb*_gcl_au*MTQxOTAzNDA1OC4xNzMxNTgzNTYz'}
           >
             Book a demo
