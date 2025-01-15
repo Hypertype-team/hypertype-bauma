@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { FileText } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Toolbar = () => {
+  const navigate = useNavigate();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -53,6 +57,14 @@ const Toolbar = () => {
             >
               Demo
             </button>
+            <Button
+              onClick={() => navigate('/reports')}
+              variant="ghost"
+              className="text-white/80 hover:text-white transition-colors gap-2"
+            >
+              <FileText className="w-4 h-4" />
+              Reports
+            </Button>
           </nav>
           <Button
             className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-2 text-sm font-medium"
