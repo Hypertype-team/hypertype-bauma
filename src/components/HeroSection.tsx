@@ -64,22 +64,6 @@ const HeroSection = () => {
               Learn More
             </Button>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-            className="relative mx-auto max-w-5xl"
-          >
-            <div className="relative rounded-lg overflow-hidden shadow-2xl border border-white/10">
-              <img
-                src="/lovable-uploads/fe196bd1-4fe7-4741-90b3-1f9a23f33545.png"
-                alt="Hypersight Dashboard Demo"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
