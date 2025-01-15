@@ -91,10 +91,10 @@ const IntegrationsSection = () => {
             className="text-left space-y-6"
           >
             <h2 className="text-4xl font-bold bg-gradient-to-r from-[#9b87f5] to-[#7E69AB] bg-clip-text text-transparent">
-              Use your support tickets as product direction with Hypersight
+              Connect Your Support Stack
             </h2>
             <p className="text-xl text-white/70 leading-relaxed">
-              Your support tickets are more than tasks – they're a treasure map. Hypersight analyzes and synthesizes your support tickets, generating powerful reports that direct your organization and help you make data-driven decisions, prioritize confidently, and stay laser-focused on what makes you better.
+              Seamlessly integrate Hypersight with your existing support tools. Our platform works instantly with leading solutions like Zendesk, Intercom, Freshdesk, HubSpot, and Salesforce.
             </p>
             <ul className="space-y-4 text-white/70">
               <li className="flex items-center space-x-3">
