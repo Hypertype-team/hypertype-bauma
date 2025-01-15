@@ -36,20 +36,28 @@ const Demo = () => {
   ];
 
   const chartData = [
-    { month: "Jan", tickets: 65 },
-    { month: "Feb", tickets: 85 },
-    { month: "Mar", tickets: 75 },
-    { month: "Apr", tickets: 95 },
-    { month: "May", tickets: 115 },
-    { month: "Jun", tickets: 125 },
+    { month: "Jan", energyIssues: 28, systemOptimization: 37 },
+    { month: "Feb", energyIssues: 35, systemOptimization: 50 },
+    { month: "Mar", energyIssues: 32, systemOptimization: 43 },
+    { month: "Apr", energyIssues: 40, systemOptimization: 55 },
+    { month: "May", energyIssues: 45, systemOptimization: 70 },
+    { month: "Jun", energyIssues: 48, systemOptimization: 77 },
   ];
 
   const config = {
-    tickets: {
+    energyIssues: {
       theme: {
         light: "#4776e6",
         dark: "#8a56e9",
       },
+      label: "Energy System Issues",
+    },
+    systemOptimization: {
+      theme: {
+        light: "#9b87f5",
+        dark: "#7E69AB",
+      },
+      label: "System Optimization Requests",
     },
   };
 
@@ -139,7 +147,7 @@ const Demo = () => {
 
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="rounded-xl border bg-white p-6 shadow-sm">
-                  <h3 className="mb-4 text-lg font-medium">Ticket Trends</h3>
+                  <h3 className="mb-4 text-lg font-medium">System Performance Trends</h3>
                   <div className="h-[300px]">
                     <ChartContainer config={config}>
                       <AreaChart data={chartData}>
@@ -148,10 +156,19 @@ const Demo = () => {
                         <ChartTooltip content={<ChartTooltipContent />} />
                         <Area
                           type="monotone"
-                          dataKey="tickets"
-                          stroke="var(--color-tickets)"
-                          fill="var(--color-tickets)"
+                          dataKey="energyIssues"
+                          stroke="var(--color-energyIssues)"
+                          fill="var(--color-energyIssues)"
                           fillOpacity={0.2}
+                          stackId="1"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="systemOptimization"
+                          stroke="var(--color-systemOptimization)"
+                          fill="var(--color-systemOptimization)"
+                          fillOpacity={0.2}
+                          stackId="1"
                         />
                       </AreaChart>
                     </ChartContainer>
