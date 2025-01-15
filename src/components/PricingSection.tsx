@@ -6,38 +6,40 @@ const PricingCard = ({ title, frequency, originalPrice, earlyBirdPrice, yearlyPr
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="relative backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 w-full mx-auto mb-8 last:mb-0 md:mb-0"
+    className="relative backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 w-full mx-auto mb-8 last:mb-0 md:mb-0 flex flex-col h-full"
   >
     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary px-4 py-1 rounded-full text-white text-sm whitespace-nowrap">
       Early Bird Program
     </div>
-    <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-    <p className="text-gray-400 mb-4">{frequency}</p>
-    <div className="mb-6">
-      <div className="text-gray-400 line-through mb-1">${originalPrice}/month</div>
-      <div className="text-4xl font-bold text-white">${earlyBirdPrice}/month</div>
-      <div className="text-primary mt-1">${yearlyPrice} billed yearly</div>
+    <div className="flex-grow">
+      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-gray-400 mb-4">{frequency}</p>
+      <div className="mb-6">
+        <div className="text-gray-400 line-through mb-1">${originalPrice}/month</div>
+        <div className="text-4xl font-bold text-white">${earlyBirdPrice}/month</div>
+        <div className="text-primary mt-1">${yearlyPrice} billed yearly</div>
+      </div>
+      <ul className="space-y-4 mb-8">
+        {features.map((feature, index) => (
+          <li key={index} className="text-gray-300 flex items-start gap-2">
+            <svg
+              className="w-5 h-5 text-primary flex-shrink-0 mt-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul className="space-y-4 mb-8">
-      {features.map((feature, index) => (
-        <li key={index} className="text-gray-300 flex items-start gap-2">
-          <svg
-            className="w-5 h-5 text-primary flex-shrink-0 mt-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          <span>{feature}</span>
-        </li>
-      ))}
-    </ul>
     <Button
       className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white py-6"
       onClick={() => window.open('https://hypertype.fillout.com/talktosales?_gl=1*fyovem*_gcl_au*MTQxOTAzNDA1OC4xNzMxNTgzNTYz', '_blank')}
