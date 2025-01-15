@@ -50,7 +50,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="flex justify-center gap-4 mb-12"
+            className="flex justify-center gap-4 mb-20"
           >
             <Button
               className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-8 py-6 text-lg rounded-lg"
@@ -63,6 +63,25 @@ const HeroSection = () => {
             >
               Learn More
             </Button>
+          </motion.div>
+
+          {/* Logos Section */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="mt-16"
+          >
+            <p className="text-gray-400 text-lg mb-8">As seen in and backed by</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center">
+              <img src="/lovable-uploads/0d49ea4a-140e-4f5c-9274-eb01ad8c50f2.png" alt="Wired" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/0f3bf8be-3e80-4ee8-bf96-66a17672ccf5.png" alt="Breakit" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/14e8106c-3784-42e4-a732-6674b1e928e7.png" alt="Digital" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/32aa1dc1-bcab-4433-b372-7af6c64ef6ee.png" alt="Tech.eu" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/4bf29358-ac97-4c98-94fd-b6afa234ceb7.png" alt="Luminar Ventures" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/7e7127fb-d7da-47c0-828d-fc1724b0c7f3.png" alt="Sting" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/8197dcdd-5c74-4b53-a25a-e2076a00cc25.png" alt="Antler" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+            </div>
           </motion.div>
         </motion.div>
       </div>
