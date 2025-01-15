@@ -20,7 +20,7 @@ const FeaturesSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setFrontImage(prev => prev === 'reports' ? 'dashboard' : 'reports');
-    }, 5000);
+    }, 7000); // Increased interval for better user experience
     
     return () => clearInterval(interval);
   }, []);
@@ -112,57 +112,60 @@ const FeaturesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative h-[600px] select-none flex items-center justify-center"
+            className="relative h-[600px] select-none flex items-center justify-center perspective-[2000px]"
           >
             {/* Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`absolute w-full h-full cursor-pointer transition-all duration-700 ease-in-out
-                ${frontImage === 'dashboard' ? 'z-20 opacity-100' : 'z-10 opacity-60'}`}
+              className={`absolute w-full h-full cursor-pointer transition-all duration-[1200ms] ease-in-out
+                ${frontImage === 'dashboard' ? 'z-20 opacity-100' : 'z-10 opacity-70'}`}
               onClick={() => setFrontImage('dashboard')}
               style={{
                 transform: `perspective(2000px) ${frontImage === 'dashboard' ? 
-                  'translateZ(0) translateX(0)' : 
-                  'translateZ(-200px) translateX(-15%)'}`
+                  'translateZ(50px) translateX(0) translateY(0) rotateY(0deg)' : 
+                  'translateZ(-300px) translateX(-25%) translateY(-10%) rotateY(-15deg)'}`
               }}
             >
               <img
                 src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
                 alt="Hypersight Dashboard"
-                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-700 ease-in-out
-                  ${frontImage === 'dashboard' ? 'scale-105' : 'scale-90'}`}
+                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-[1200ms] ease-in-out
+                  ${frontImage === 'dashboard' ? 'scale-105' : 'scale-85'}`}
                 style={{ 
-                  maxWidth: "85%",
+                  maxWidth: "90%",
                   margin: "0 auto",
-                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.5' : '0.2'}))`,
+                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.6' : '0.3'}))
+                          brightness(${frontImage === 'dashboard' ? '1' : '0.9'})`,
                 }}
               />
             </motion.div>
+
             {/* Reports Image */}
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className={`absolute w-full h-full cursor-pointer transition-all duration-700 ease-in-out
-                ${frontImage === 'reports' ? 'z-20 opacity-100' : 'z-10 opacity-60'}`}
+              className={`absolute w-full h-full cursor-pointer transition-all duration-[1200ms] ease-in-out
+                ${frontImage === 'reports' ? 'z-20 opacity-100' : 'z-10 opacity-70'}`}
               onClick={() => setFrontImage('reports')}
               style={{
                 transform: `perspective(2000px) ${frontImage === 'reports' ? 
-                  'translateZ(0) translateX(0)' : 
-                  'translateZ(-200px) translateX(15%)'}`
+                  'translateZ(50px) translateX(0) translateY(0) rotateY(0deg)' : 
+                  'translateZ(-300px) translateX(25%) translateY(10%) rotateY(15deg)'}`
               }}
             >
               <img
                 src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
                 alt="Hypersight Reports"
-                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-700 ease-in-out
-                  ${frontImage === 'reports' ? 'scale-105' : 'scale-90'}`}
+                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-[1200ms] ease-in-out
+                  ${frontImage === 'reports' ? 'scale-105' : 'scale-85'}`}
                 style={{ 
-                  maxWidth: "85%",
+                  maxWidth: "90%",
                   margin: "0 auto",
-                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'reports' ? '0.5' : '0.2'}))`,
+                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'reports' ? '0.6' : '0.3'}))
+                          brightness(${frontImage === 'reports' ? '1' : '0.9'})`,
                 }}
               />
             </motion.div>
