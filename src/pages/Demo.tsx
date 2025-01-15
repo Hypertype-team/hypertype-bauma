@@ -8,7 +8,13 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
-import { Home, PieChart, Settings, Users, Bell, Inbox, HelpCircle } from "lucide-react";
+import { Home, PieChart, Settings, Users, Bell, HelpCircle } from "lucide-react";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
+import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 const Demo = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -17,11 +23,28 @@ const Demo = () => {
     { icon: Home, label: "Home", id: "home" },
     { icon: PieChart, label: "Reports", id: "reports" },
     { icon: Users, label: "Teams", id: "teams" },
-    { icon: Inbox, label: "Inbox", id: "inbox" },
     { icon: Bell, label: "Notifications", id: "notifications" },
     { icon: Settings, label: "Settings", id: "settings" },
     { icon: HelpCircle, label: "Help & Support", id: "help" },
   ];
+
+  const chartData = [
+    { month: "Jan", tickets: 65 },
+    { month: "Feb", tickets: 85 },
+    { month: "Mar", tickets: 75 },
+    { month: "Apr", tickets: 95 },
+    { month: "May", tickets: 115 },
+    { month: "Jun", tickets: 125 },
+  ];
+
+  const config = {
+    tickets: {
+      theme: {
+        light: "#4776e6",
+        dark: "#8a56e9",
+      },
+    },
+  };
 
   return (
     <div className="min-h-screen bg-[#F6F6F7]">
@@ -30,7 +53,7 @@ const Demo = () => {
           <Sidebar>
             <SidebarHeader className="p-4">
               <img
-                src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
+                src="/lovable-uploads/8197dcdd-5c74-4b53-a25a-e2076a00cc25.png"
                 alt="Hypersight Logo"
                 className="h-8"
               />
@@ -85,32 +108,22 @@ const Demo = () => {
 
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="rounded-xl border bg-white p-6 shadow-sm">
-                  <h3 className="mb-4 text-lg font-medium">Recent Tickets</h3>
-                  <div className="space-y-4">
-                    {[
-                      { id: "T-1234", title: "Integration Issue", status: "Open", priority: "High" },
-                      { id: "T-1235", title: "API Documentation", status: "In Progress", priority: "Medium" },
-                      { id: "T-1236", title: "Dashboard Bug", status: "Open", priority: "High" },
-                    ].map((ticket) => (
-                      <div key={ticket.id} className="flex items-center justify-between border-b pb-4">
-                        <div>
-                          <p className="font-medium text-gray-900">{ticket.title}</p>
-                          <p className="text-sm text-gray-500">{ticket.id}</p>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className={`px-2 py-1 text-xs rounded-full ${
-                            ticket.status === "Open" ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700"
-                          }`}>
-                            {ticket.status}
-                          </span>
-                          <span className={`px-2 py-1 text-xs rounded-full ${
-                            ticket.priority === "High" ? "bg-red-100 text-red-700" : "bg-blue-100 text-blue-700"
-                          }`}>
-                            {ticket.priority}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
+                  <h3 className="mb-4 text-lg font-medium">Ticket Trends</h3>
+                  <div className="h-[300px]">
+                    <ChartContainer config={config}>
+                      <AreaChart data={chartData}>
+                        <XAxis dataKey="month" />
+                        <YAxis />
+                        <ChartTooltip content={<ChartTooltipContent />} />
+                        <Area
+                          type="monotone"
+                          dataKey="tickets"
+                          stroke="var(--color-tickets)"
+                          fill="var(--color-tickets)"
+                          fillOpacity={0.2}
+                        />
+                      </AreaChart>
+                    </ChartContainer>
                   </div>
                 </div>
 
