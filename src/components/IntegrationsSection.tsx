@@ -107,9 +107,14 @@ const IntegrationsSection = () => {
             <h2 className="text-4xl font-bold bg-gradient-to-r from-[#9b87f5] to-[#7E69AB] bg-clip-text text-transparent">
               Connect Your Support Stack
             </h2>
-            <p className="text-xl text-white/70 leading-relaxed">
-              Seamlessly integrate Hypersight with your existing support tools. Our platform works instantly with leading solutions like Zendesk, Intercom, Freshdesk, HubSpot, and Salesforce.
-            </p>
+            <div className="space-y-4">
+              <p className="text-xl text-white/70 leading-relaxed">
+                Seamlessly integrate Hypersight with your existing support tools. Our platform works instantly with leading solutions like Zendesk, Intercom, Freshdesk, HubSpot, and Salesforce.
+              </p>
+              <p className="text-xl text-white/70 leading-relaxed">
+                Don't see your tool? No problem. Our flexible API allows for custom integrations with any support platform you use.
+              </p>
+            </div>
             <ul className="space-y-4 text-white/70">
               <li className="flex items-center space-x-3">
                 <div className="w-2 h-2 rounded-full bg-[#9b87f5]" />
