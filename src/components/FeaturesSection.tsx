@@ -103,35 +103,39 @@ const FeaturesSection = () => {
             transition={{ duration: 0.5 }}
             className="relative h-[600px] select-none"
           >
+            {/* Back Image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute top-0 left-0 w-full h-full"
+              className="absolute top-10 left-10 w-full h-full z-10"
             >
               <img
                 src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
                 alt="Hypersight Dashboard"
-                className="w-full h-auto rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-300"
+                className="w-full h-auto rounded-2xl shadow-2xl transform rotate-6 hover:rotate-3 transition-all duration-500 ease-out"
                 style={{ 
                   maxWidth: "90%",
-                  filter: "drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))"
+                  filter: "drop-shadow(0 35px 35px rgb(0 0 0 / 0.25))",
+                  transformOrigin: "center center",
                 }}
               />
             </motion.div>
+            {/* Front Image */}
             <motion.div
               initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute top-20 left-20 w-full h-full"
+              className="absolute top-0 left-0 w-full h-full z-20"
             >
               <img
                 src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
                 alt="Hypersight Reports"
-                className="w-full h-auto rounded-2xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-300"
+                className="w-full h-auto rounded-2xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-all duration-500 ease-out"
                 style={{ 
-                  maxWidth: "90%",
-                  filter: "drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))"
+                  maxWidth: "85%",
+                  filter: "drop-shadow(0 25px 25px rgb(0 0 0 / 0.3))",
+                  transformOrigin: "center center",
                 }}
               />
             </motion.div>
