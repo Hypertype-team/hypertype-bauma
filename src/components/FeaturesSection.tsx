@@ -38,7 +38,8 @@ const FeaturesSection = () => {
 
   return (
     <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/2 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(71,118,230,0.05)_0%,rgba(138,86,233,0.03)_50%,transparent_100%)] animate-gradient-shift bg-[length:200%_200%]" />
       
       <div className="container mx-auto px-4">
         <motion.div
