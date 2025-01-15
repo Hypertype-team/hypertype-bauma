@@ -112,7 +112,7 @@ const PricingSection = () => {
         </motion.div>
 
         <div className="flex justify-center">
-          <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl px-4">
             {plans.map((plan, index) => (
               <PricingCard key={index} {...plan} />
             ))}
