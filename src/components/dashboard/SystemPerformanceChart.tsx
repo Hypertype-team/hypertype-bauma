@@ -36,10 +36,10 @@ const SystemPerformanceChart = () => {
   return (
     <div className="rounded-xl border bg-white p-6 shadow-sm">
       <h3 className="mb-4 text-lg font-medium">System Performance Trends</h3>
-      <div className="h-[300px] w-full">
+      <div className="relative h-[300px] w-full">
         <ChartContainer config={config}>
           <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+            <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
               <XAxis dataKey="month" />
               <YAxis />
               <ChartTooltip content={<ChartTooltipContent />} />
