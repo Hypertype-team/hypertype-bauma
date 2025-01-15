@@ -11,14 +11,14 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative h-[600px] select-none"
+      className="relative h-[500px] select-none"
       style={{
         perspective: '2000px',
       }}
     >
       {/* Dashboard Image */}
       <motion.div
-        className="absolute w-full h-full cursor-pointer"
+        className="absolute w-[90%] h-full cursor-pointer"
         style={{
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
@@ -50,7 +50,7 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
 
       {/* Reports Image */}
       <motion.div
-        className="absolute w-full h-full cursor-pointer"
+        className="absolute w-[90%] h-full cursor-pointer"
         style={{
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
