@@ -57,7 +57,7 @@ const FeaturesSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          <div className="lg:col-span-7 mb-32 lg:mb-0"> {/* Increased bottom margin from mb-20 to mb-32 */}
+          <div className="lg:col-span-7 mb-48 lg:mb-0"> {/* Increased bottom margin to mb-48 */}
             <ImageShowcase frontImage={frontImage} setFrontImage={setFrontImage} />
           </div>
 
