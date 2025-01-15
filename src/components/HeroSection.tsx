@@ -31,7 +31,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto"
           >
-            Unlock the data from your support tickets to make the right decisions
+            Unlock the data from your support tickets
           </motion.p>
 
           <motion.p
