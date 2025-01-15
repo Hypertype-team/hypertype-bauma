@@ -25,7 +25,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#535050] to-white bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-thin mb-6 bg-gradient-to-r from-[#535050] to-white bg-clip-text text-transparent"
           >
             Know Your Customers. For Real.
           </motion.h1>
