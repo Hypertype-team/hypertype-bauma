@@ -11,7 +11,7 @@ import {
 import { Home, PieChart, Settings, Users, Bell, HelpCircle } from "lucide-react";
 import DashboardMetrics from "@/components/dashboard/DashboardMetrics";
 import SystemPerformanceChart from "@/components/dashboard/SystemPerformanceChart";
-import TeamPerformance from "@/components/dashboard/TeamPerformance";
+import DepartmentTickets from "@/components/dashboard/DepartmentTickets";
 import PriorityIssues from "@/components/dashboard/PriorityIssues";
 
 const Demo = () => {
@@ -72,7 +72,7 @@ const Demo = () => {
 
               <div className="grid gap-6 md:grid-cols-2">
                 <SystemPerformanceChart />
-                <TeamPerformance />
+                <DepartmentTickets />
               </div>
 
               <PriorityIssues />
