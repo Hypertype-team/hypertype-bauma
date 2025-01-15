@@ -11,7 +11,7 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative h-[180px] xs:h-[220px] sm:h-[280px] md:h-[320px] lg:h-[420px] select-none lg:-mt-24"
+      className="relative h-[180px] xs:h-[220px] sm:h-[280px] md:h-[320px] lg:h-[480px] select-none"
       style={{
         perspective: '2000px',
       }}
@@ -23,8 +23,8 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
             ${frontImage === 'dashboard' 
-              ? 'translateZ(30px) translateX(-5%) translateY(-5%) rotateY(-15deg)' 
-              : 'translateZ(-100px) translateX(-20%) translateY(-10%) rotateY(-25deg)'}
+              ? 'translateZ(30px) translateX(-5%) translateY(0%) rotateY(-15deg)' 
+              : 'translateZ(-100px) translateX(-20%) translateY(-5%) rotateY(-25deg)'}
           `,
           opacity: frontImage === 'dashboard' ? 1 : 0.4,
           zIndex: frontImage === 'dashboard' ? 20 : 10
@@ -55,8 +55,8 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
             ${frontImage === 'reports' 
-              ? 'translateZ(30px) translateX(5%) translateY(5%) rotateY(15deg)' 
-              : 'translateZ(-100px) translateX(20%) translateY(10%) rotateY(25deg)'}
+              ? 'translateZ(30px) translateX(5%) translateY(0%) rotateY(15deg)' 
+              : 'translateZ(-100px) translateX(20%) translateY(-5%) rotateY(25deg)'}
           `,
           opacity: frontImage === 'reports' ? 1 : 0.4,
           zIndex: frontImage === 'reports' ? 20 : 10
