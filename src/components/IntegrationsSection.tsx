@@ -6,7 +6,7 @@ const IntegrationsSection = () => {
     { name: "Intercom", logo: "/lovable-uploads/fe196bd1-4fe7-4741-90b3-1f9a23f33545.png" },
     { name: "Freshdesk", logo: "/lovable-uploads/8686579e-551d-4287-8280-93444ddd945c.png" },
     { name: "HubSpot", logo: "/lovable-uploads/0f3bf8be-3e80-4ee8-bf96-66a17672ccf5.png" },
-    { name: "Salesforce", logo: "/lovable-uploads/b286c223-434f-4519-833d-2c86912b4e8e.png" },
+    { name: "Salesforce", logo: "/lovable-uploads/32aa1dc1-bcab-4433-b372-7af6c64ef6ee.png" },
   ];
 
   return (
