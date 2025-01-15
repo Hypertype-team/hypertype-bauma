@@ -20,7 +20,7 @@ const IntegrationsSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative w-full max-w-[400px] md:max-w-[500px] aspect-square mx-auto flex items-center justify-center">
+            <div className="relative w-full max-w-[500px] aspect-square mx-auto flex items-center justify-center">
               {/* Center Hypersight logo */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -28,11 +28,11 @@ const IntegrationsSection = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="absolute z-10"
               >
-                <div className="w-16 h-16 md:w-28 md:h-28 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
+                <div className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
                   <img
                     src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
                     alt="Hypersight"
-                    className="w-12 h-12 md:w-20 md:h-20 object-contain"
+                    className="w-16 h-16 md:w-20 md:h-20 object-contain"
                   />
                 </div>
               </motion.div>
@@ -40,12 +40,9 @@ const IntegrationsSection = () => {
               {/* Integration logos in a circle */}
               {integrations.map((integration, index) => {
                 const angle = (index * 360) / integrations.length;
-                const radius = 120;
-                const desktopRadius = radius * 1.33;
+                const radius = 160; // Reduced radius for tighter spacing
                 const x = radius * Math.cos((angle - 90) * (Math.PI / 180));
                 const y = radius * Math.sin((angle - 90) * (Math.PI / 180));
-                const desktopX = desktopRadius * Math.cos((angle - 90) * (Math.PI / 180));
-                const desktopY = desktopRadius * Math.sin((angle - 90) * (Math.PI / 180));
 
                 return (
                   <motion.div
@@ -53,19 +50,15 @@ const IntegrationsSection = () => {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 * index }}
-                    className="absolute w-12 h-12 md:w-20 md:h-20 transition-all duration-300"
+                    className="absolute w-16 h-16 md:w-20 md:h-20"
                     style={{
-                      left: `calc(50% + ${x}px - 24px)`,
-                      top: `calc(50% + ${y}px - 24px)`,
-                      [`@media (min-width: 768px)`]: {
-                        left: `calc(50% + ${desktopX}px - 40px)`,
-                        top: `calc(50% + ${desktopY}px - 40px)`,
-                      }
+                      left: `calc(50% + ${x}px - 40px)`,
+                      top: `calc(50% + ${y}px - 40px)`,
                     }}
                   >
                     {/* Connection line */}
                     <svg
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] md:w-[200px] h-[150px] md:h-[200px] -z-10"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] -z-10"
                       style={{
                         transform: `rotate(${angle}deg)`,
                       }}
@@ -91,7 +84,7 @@ const IntegrationsSection = () => {
                     </svg>
                     
                     {/* Logo container */}
-                    <div className="w-12 h-12 md:w-20 md:h-20 p-2 md:p-4 rounded-xl bg-[#9b87f5]/10 backdrop-blur-sm border border-[#9b87f5]/20 hover:border-[#9b87f5]/50 transition-colors group">
+                    <div className="w-16 h-16 md:w-20 md:h-20 p-3 md:p-4 rounded-xl bg-[#9b87f5]/10 backdrop-blur-sm border border-[#9b87f5]/20 hover:border-[#9b87f5]/50 transition-colors group">
                       <img
                         src={integration.logo}
                         alt={integration.name}
