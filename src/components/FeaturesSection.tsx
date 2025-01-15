@@ -17,7 +17,6 @@ const FeatureCard = ({ title, description, icon, index }) => (
 const FeaturesSection = () => {
   const [frontImage, setFrontImage] = useState<'reports' | 'dashboard'>('reports');
   
-  // Auto-swap images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setFrontImage(prev => prev === 'reports' ? 'dashboard' : 'reports');
@@ -126,18 +125,18 @@ const FeaturesSection = () => {
               style={{
                 transform: `perspective(2000px) ${frontImage === 'dashboard' ? 
                   'translateZ(0) translateX(0)' : 
-                  'translateZ(-100px) translateX(-5%)'}`
+                  'translateZ(-200px) translateX(-15%)'}`
               }}
             >
               <img
                 src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
                 alt="Hypersight Dashboard"
                 className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-700 ease-in-out
-                  ${frontImage === 'dashboard' ? 'scale-105' : 'scale-95'}`}
+                  ${frontImage === 'dashboard' ? 'scale-105' : 'scale-90'}`}
                 style={{ 
                   maxWidth: "85%",
                   margin: "0 auto",
-                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '30px' : '20px'} 40px rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.4' : '0.2'}))`,
+                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.5' : '0.2'}))`,
                 }}
               />
             </motion.div>
@@ -152,18 +151,18 @@ const FeaturesSection = () => {
               style={{
                 transform: `perspective(2000px) ${frontImage === 'reports' ? 
                   'translateZ(0) translateX(0)' : 
-                  'translateZ(-100px) translateX(5%)'}`
+                  'translateZ(-200px) translateX(15%)'}`
               }}
             >
               <img
                 src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
                 alt="Hypersight Reports"
                 className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-700 ease-in-out
-                  ${frontImage === 'reports' ? 'scale-105' : 'scale-95'}`}
+                  ${frontImage === 'reports' ? 'scale-105' : 'scale-90'}`}
                 style={{ 
                   maxWidth: "85%",
                   margin: "0 auto",
-                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '30px' : '20px'} 40px rgb(0 0 0 / ${frontImage === 'reports' ? '0.4' : '0.2'}))`,
+                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'reports' ? '0.5' : '0.2'}))`,
                 }}
               />
             </motion.div>
