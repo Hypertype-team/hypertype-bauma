@@ -37,7 +37,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-32 lg:py-48 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
       
       <div className="container mx-auto px-4">
@@ -45,7 +45,7 @@ const FeaturesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-20"
+          className="text-center mb-20 lg:mb-32"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary">
             Your Support Data is Your Goldmine
@@ -56,8 +56,8 @@ const FeaturesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-7">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <div className="lg:col-span-7 mb-12 lg:mb-0">
             <ImageShowcase frontImage={frontImage} setFrontImage={setFrontImage} />
           </div>
 

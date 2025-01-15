@@ -10,7 +10,7 @@ const IntegrationsSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Integration visualization */}
@@ -20,7 +20,7 @@ const IntegrationsSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative w-full max-w-[400px] aspect-square mx-auto flex items-center justify-center">
+            <div className="relative w-full max-w-[500px] aspect-square mx-auto flex items-center justify-center">
               {/* Center Hypersight logo */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -40,7 +40,7 @@ const IntegrationsSection = () => {
               {/* Integration logos in a circle */}
               {integrations.map((integration, index) => {
                 const angle = (index * 360) / integrations.length;
-                const radius = window.innerWidth < 640 ? 120 : 160; // Smaller radius on mobile
+                const radius = 160; // Consistent radius for all screen sizes
                 const x = radius * Math.cos((angle - 90) * (Math.PI / 180));
                 const y = radius * Math.sin((angle - 90) * (Math.PI / 180));
 
@@ -52,13 +52,13 @@ const IntegrationsSection = () => {
                     transition={{ duration: 0.5, delay: 0.1 * index }}
                     className="absolute w-16 h-16 md:w-24 md:h-24"
                     style={{
-                      left: `calc(50% + ${x}px - ${window.innerWidth < 640 ? "32px" : "48px"})`,
-                      top: `calc(50% + ${y}px - ${window.innerWidth < 640 ? "32px" : "48px"})`,
+                      left: `calc(50% + ${x}px - 48px)`,
+                      top: `calc(50% + ${y}px - 48px)`,
                     }}
                   >
                     {/* Connection line */}
                     <svg
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] md:w-[200px] h-[160px] md:h-[200px] -z-10"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] -z-10"
                       style={{
                         transform: `rotate(${angle}deg)`,
                       }}
