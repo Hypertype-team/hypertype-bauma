@@ -11,14 +11,14 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative h-[200px] sm:h-[300px] lg:h-[400px] select-none" // Reduced heights for all breakpoints
+      className="relative h-[180px] xs:h-[220px] sm:h-[280px] md:h-[320px] lg:h-[380px] select-none"
       style={{
         perspective: '2000px',
       }}
     >
       {/* Dashboard Image */}
       <motion.div
-        className="absolute w-[80%] h-full cursor-pointer" // Reduced width from 90% to 80%
+        className="absolute w-[75%] xs:w-[70%] sm:w-[75%] md:w-[80%] h-full cursor-pointer mx-auto left-0 right-0"
         style={{
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
@@ -34,7 +34,7 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
         <img
           src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
           alt="Hypersight Dashboard"
-          className="w-full h-auto rounded-2xl shadow-2xl max-w-[400px] mx-auto" // Reduced max-width from 500px to 400px
+          className="w-full h-auto rounded-2xl shadow-2xl max-w-[300px] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[400px] mx-auto"
           style={{ 
             maxWidth: "100%",
             transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -50,7 +50,7 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
 
       {/* Reports Image */}
       <motion.div
-        className="absolute w-[80%] h-full cursor-pointer" // Reduced width from 90% to 80%
+        className="absolute w-[75%] xs:w-[70%] sm:w-[75%] md:w-[80%] h-full cursor-pointer mx-auto left-0 right-0"
         style={{
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
@@ -66,7 +66,7 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
         <img
           src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
           alt="Hypersight Reports"
-          className="w-full h-auto rounded-2xl shadow-2xl max-w-[400px] mx-auto" // Reduced max-width from 500px to 400px
+          className="w-full h-auto rounded-2xl shadow-2xl max-w-[300px] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[400px] mx-auto"
           style={{ 
             maxWidth: "100%",
             transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
