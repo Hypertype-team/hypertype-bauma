@@ -20,24 +20,24 @@ const IntegrationsSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            {/* Center Hypersight logo */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            >
-              <div className="w-32 h-32 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
-                <img
-                  src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
-                  alt="Hypersight"
-                  className="w-20 h-20 object-contain"
-                />
-              </div>
-            </motion.div>
+            <div className="relative w-[400px] h-[400px] mx-auto flex items-center justify-center">
+              {/* Center Hypersight logo */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="absolute z-10"
+              >
+                <div className="w-32 h-32 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
+                  <img
+                    src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
+                    alt="Hypersight"
+                    className="w-20 h-20 object-contain"
+                  />
+                </div>
+              </motion.div>
 
-            {/* Integration logos in a circle */}
-            <div className="relative w-[400px] h-[400px] mx-auto">
+              {/* Integration logos in a circle */}
               {integrations.map((integration, index) => {
                 const angle = (index * 360) / integrations.length;
                 const radius = 160; // Distance from center
