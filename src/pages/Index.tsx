@@ -28,7 +28,13 @@ const Index = () => {
         {/* Hypertype section placeholder */}
       </div>
       <footer className="py-8 text-center text-gray-400">
-        A <a href="https://www.hypertype.ai/" target="_blank" rel="noopener noreferrer"><img src="/lovable-uploads/9fe56b51-bb4e-4019-8bf9-a2efe848460a.png" alt="Hypertype" className="h-12 mx-1 inline-block" /></a> product
+        A <a href="https://www.hypertype.ai/" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="/lovable-uploads/9fe56b51-bb4e-4019-8bf9-a2efe848460a.png" 
+            alt="Hypertype" 
+            className="h-12 mx-1 inline-block"
+          />
+        </a> product
       </footer>
     </div>
   );
