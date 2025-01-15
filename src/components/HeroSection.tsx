@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
 const HeroSection = () => {
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features');
+    featuresSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-20">
       <div className="absolute inset-0">
@@ -60,6 +65,7 @@ const HeroSection = () => {
             <Button
               variant="outline"
               className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-lg"
+              onClick={scrollToFeatures}
             >
               Learn More
             </Button>
