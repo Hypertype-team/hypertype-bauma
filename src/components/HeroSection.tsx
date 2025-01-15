@@ -31,7 +31,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto"
           >
-            Use your support tickets as product direction with Hypersight
+            Unlock the data from your support tickets to make the right decisions
           </motion.p>
 
           <motion.p
