@@ -38,7 +38,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="text-lg text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed"
           >
             Your support tickets are more than tasks – they're a treasure map. 
             Hypersight analyzes and synthesizes your support tickets, generating powerful reports 
@@ -50,7 +50,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="flex justify-center gap-4"
+            className="flex justify-center gap-4 mb-12"
           >
             <Button
               className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-8 py-6 text-lg rounded-lg"
@@ -63,6 +63,22 @@ const HeroSection = () => {
             >
               Learn More
             </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            className="relative mx-auto max-w-5xl"
+          >
+            <div className="relative rounded-lg overflow-hidden shadow-2xl border border-white/10">
+              <img
+                src="/lovable-uploads/fe196bd1-4fe7-4741-90b3-1f9a23f33545.png"
+                alt="Hypersight Dashboard Demo"
+                className="w-full h-auto"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+            </div>
           </motion.div>
         </motion.div>
       </div>
