@@ -34,7 +34,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto bg-gradient-to-r from-[#eec5bd] to-[#96a6fd] bg-clip-text text-transparent"
           >
             Unlock the data from your support tickets
           </motion.p>
