@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const FeatureCard = ({ title, description, icon, index }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, x: 20 }}
+    whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors"
   >
@@ -78,7 +78,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -95,10 +95,53 @@ const FeaturesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} index={index} />
-          ))}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Images Stack */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative h-[600px] select-none"
+          >
+            <motion.div
+              initial={{ opacity: 0, yileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="absolute top-0 left-0 w-full h-full"
+            >
+              <img
+                src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
+                alt="Hypersight Dashboard"
+                className="w-full h-auto rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-300"
+                style={{ 
+                  maxWidth: "90%",
+                  filter: "drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))"
+                }}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="absolute top-20 left-20 w-full h-full"
+            >
+              <img
+                src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
+                alt="Hypersight Reports"
+                className="w-full h-auto rounded-2xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-300"
+                style={{ 
+                  maxWidth: "90%",
+                  filter: "drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))"
+                }}
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Feature Cards */}
+          <div className="space-y-6">
+            {features.map((feature, index) => (
+              <FeatureCard key={index} {...feature} index={index} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
