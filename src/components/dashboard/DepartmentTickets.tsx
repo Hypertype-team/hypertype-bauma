@@ -2,10 +2,10 @@ import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 
 const departmentData = [
-  { name: "IT Support", tickets: 145 },
-  { name: "Customer Service", tickets: 230 },
-  { name: "Technical", tickets: 98 },
-  { name: "Operations", tickets: 156 }
+  { name: "Product Development", tickets: 245 },
+  { name: "Operations", tickets: 180 },
+  { name: "Payment Processing", tickets: 156 },
+  { name: "Customer Support", tickets: 210 }
 ];
 
 const COLORS = ['#4776e6', '#8a56e9', '#9b87f5', '#7E69AB'];
