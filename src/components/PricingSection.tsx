@@ -39,6 +39,7 @@ const PricingCard = ({ title, originalPrice, earlyBirdPrice, yearlyPrice, featur
     </ul>
     <Button
       className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white py-6"
+      onClick={() => window.location.href = 'https://hypertype.fillout.com/talktosales'}
     >
       Get Started
     </Button>
