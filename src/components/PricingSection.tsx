@@ -95,7 +95,7 @@ const PricingSection = () => {
 
   return (
     <section className="py-20 px-4">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
