@@ -42,7 +42,7 @@ const Toolbar = () => {
               Pricing
             </button>
             <button 
-              onClick={() => scrollToSection('hypertype')} 
+              onClick={() => window.location.href = 'https://www.hypertype.ai/'} 
               className="text-white/80 hover:text-white transition-colors"
             >
               Hypertype
