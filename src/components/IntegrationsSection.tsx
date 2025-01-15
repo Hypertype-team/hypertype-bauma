@@ -20,7 +20,7 @@ const IntegrationsSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative w-[400px] h-[400px] mx-auto flex items-center justify-center">
+            <div className="relative w-full max-w-[400px] aspect-square mx-auto flex items-center justify-center">
               {/* Center Hypersight logo */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -28,11 +28,11 @@ const IntegrationsSection = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="absolute z-10"
               >
-                <div className="w-32 h-32 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
+                <div className="w-20 h-20 md:w-32 md:h-32 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
                   <img
                     src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
                     alt="Hypersight"
-                    className="w-24 h-24 object-contain" // Increased from w-20 h-20 to w-24 h-24
+                    className="w-16 h-16 md:w-24 md:h-24 object-contain"
                   />
                 </div>
               </motion.div>
@@ -40,7 +40,7 @@ const IntegrationsSection = () => {
               {/* Integration logos in a circle */}
               {integrations.map((integration, index) => {
                 const angle = (index * 360) / integrations.length;
-                const radius = 160;
+                const radius = window.innerWidth < 640 ? 120 : 160; // Smaller radius on mobile
                 const x = radius * Math.cos((angle - 90) * (Math.PI / 180));
                 const y = radius * Math.sin((angle - 90) * (Math.PI / 180));
 
@@ -50,15 +50,15 @@ const IntegrationsSection = () => {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 * index }}
-                    className="absolute w-24 h-24"
+                    className="absolute w-16 h-16 md:w-24 md:h-24"
                     style={{
-                      left: `calc(50% + ${x}px - 48px)`,
-                      top: `calc(50% + ${y}px - 48px)`,
+                      left: `calc(50% + ${x}px - ${window.innerWidth < 640 ? "32px" : "48px"})`,
+                      top: `calc(50% + ${y}px - ${window.innerWidth < 640 ? "32px" : "48px"})`,
                     }}
                   >
                     {/* Connection line */}
                     <svg
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] -z-10"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] md:w-[200px] h-[160px] md:h-[200px] -z-10"
                       style={{
                         transform: `rotate(${angle}deg)`,
                       }}
@@ -84,7 +84,7 @@ const IntegrationsSection = () => {
                     </svg>
                     
                     {/* Logo container */}
-                    <div className="w-24 h-24 p-4 rounded-xl bg-[#9b87f5]/10 backdrop-blur-sm border border-[#9b87f5]/20 hover:border-[#9b87f5]/50 transition-colors group">
+                    <div className="w-16 h-16 md:w-24 md:h-24 p-3 md:p-4 rounded-xl bg-[#9b87f5]/10 backdrop-blur-sm border border-[#9b87f5]/20 hover:border-[#9b87f5]/50 transition-colors group">
                       <img
                         src={integration.logo}
                         alt={integration.name}
