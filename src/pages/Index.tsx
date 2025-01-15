@@ -28,7 +28,7 @@ const Index = () => {
         {/* Hypertype section placeholder */}
       </div>
       <footer className="py-8 text-center text-gray-400">
-        A <img src="/lovable-uploads/9fe56b51-bb4e-4019-8bf9-a2efe848460a.png" alt="Hypertype" className="h-6 mx-1 inline-block" /> product
+        A <img src="/lovable-uploads/9fe56b51-bb4e-4019-8bf9-a2efe848460a.png" alt="Hypertype" className="h-12 mx-1 inline-block" /> product
       </footer>
     </div>
   );
