@@ -38,15 +38,9 @@ const FeaturesSection = () => {
 
   return (
     <section className="relative py-32 overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 animate-gradient-flow"
-        style={{
-          backgroundSize: "200% 200%",
-        }}
-      />
-      <div className="absolute inset-0 backdrop-blur-[100px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

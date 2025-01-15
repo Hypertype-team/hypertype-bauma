@@ -58,14 +58,6 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        "gradient-flow": {
-          "0%, 100%": {
-            "background-position": "0% 50%",
-          },
-          "50%": {
-            "background-position": "100% 50%",
-          },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -73,7 +65,6 @@ export default {
         float: "float 6s ease-in-out infinite",
         "fade-up": "fade-up 0.5s ease-out",
         "fade-in": "fade-in 0.5s ease-out",
-        "gradient-flow": "gradient-flow 15s ease infinite",
       },
       backdropBlur: {
         xs: "2px",
