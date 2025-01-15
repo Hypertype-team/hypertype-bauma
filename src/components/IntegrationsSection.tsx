@@ -27,8 +27,8 @@ const IntegrationsSection = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="absolute z-10"
               style={{
-                left: '200px',
-                top: '200px',
+                left: '50%',
+                top: '50%',
                 transform: 'translate(-50%, -50%)'
               }}
             >
