@@ -6,7 +6,7 @@ const IntegrationsSection = () => {
     { name: "Intercom", logo: "/lovable-uploads/fe196bd1-4fe7-4741-90b3-1f9a23f33545.png" },
     { name: "Freshdesk", logo: "/lovable-uploads/8686579e-551d-4287-8280-93444ddd945c.png" },
     { name: "HubSpot", logo: "/lovable-uploads/0f3bf8be-3e80-4ee8-bf96-66a17672ccf5.png" },
-    { name: "Salesforce", logo: "/lovable-uploads/0262e216-a00c-495c-9ae0-b87df29b97c7.png" },
+    { name: "Salesforce", logo: "/lovable-uploads/32aa1dc1-bcab-4433-b372-7af6c64ef6ee.png" },
   ];
 
   return (
@@ -30,7 +30,7 @@ const IntegrationsSection = () => {
               >
                 <div className="w-32 h-32 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
                   <img
-                    src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
+                    src="/lovable-uploads/5c80a942-4a9e-4573-978a-f707a468bdd2.png"
                     alt="Hypersight"
                     className="w-20 h-20 object-contain"
                   />
