@@ -56,10 +56,12 @@ const FeaturesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <ImageShowcase frontImage={frontImage} setFrontImage={setFrontImage} />
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-7">
+            <ImageShowcase frontImage={frontImage} setFrontImage={setFrontImage} />
+          </div>
 
-          <div className="space-y-8 max-w-xl ml-auto">
+          <div className="lg:col-span-5 space-y-8">
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} index={index} />
             ))}

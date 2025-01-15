@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 interface ImageShowcaseProps {
   frontImage: 'reports' | 'dashboard';
@@ -24,8 +23,8 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
             ${frontImage === 'dashboard' 
-              ? 'translateZ(100px) translateX(-25%) translateY(-15%) rotateY(-15deg)' 
-              : 'translateZ(-300px) translateX(-45%) translateY(-25%) rotateY(-25deg)'}
+              ? 'translateZ(100px) translateX(-15%) translateY(-15%) rotateY(-15deg)' 
+              : 'translateZ(-300px) translateX(-35%) translateY(-25%) rotateY(-25deg)'}
           `,
           opacity: frontImage === 'dashboard' ? 1 : 0.4,
           zIndex: frontImage === 'dashboard' ? 20 : 10
@@ -56,8 +55,8 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
           transition: 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: `
             ${frontImage === 'reports' 
-              ? 'translateZ(100px) translateX(25%) translateY(15%) rotateY(15deg)' 
-              : 'translateZ(-300px) translateX(45%) translateY(25%) rotateY(25deg)'}
+              ? 'translateZ(100px) translateX(15%) translateY(15%) rotateY(15deg)' 
+              : 'translateZ(-300px) translateX(35%) translateY(25%) rotateY(25deg)'}
           `,
           opacity: frontImage === 'reports' ? 1 : 0.4,
           zIndex: frontImage === 'reports' ? 20 : 10
