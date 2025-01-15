@@ -74,13 +74,13 @@ const HeroSection = () => {
           >
             <p className="text-gray-400 text-lg mb-8">As seen in and backed by</p>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center">
-              <img src="/lovable-uploads/0d49ea4a-140e-4f5c-9274-eb01ad8c50f2.png" alt="Wired" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
-              <img src="/lovable-uploads/0f3bf8be-3e80-4ee8-bf96-66a17672ccf5.png" alt="Breakit" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
-              <img src="/lovable-uploads/14e8106c-3784-42e4-a732-6674b1e928e7.png" alt="Digital" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
-              <img src="/lovable-uploads/32aa1dc1-bcab-4433-b372-7af6c64ef6ee.png" alt="Tech.eu" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
-              <img src="/lovable-uploads/4bf29358-ac97-4c98-94fd-b6afa234ceb7.png" alt="Luminar Ventures" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
-              <img src="/lovable-uploads/7e7127fb-d7da-47c0-828d-fc1724b0c7f3.png" alt="Sting" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
-              <img src="/lovable-uploads/8197dcdd-5c74-4b53-a25a-e2076a00cc25.png" alt="Antler" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/7a83bc8b-9a69-4fdb-a233-a3b7583ef5bd.png" alt="Wired" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/23105907-2f33-43aa-83b2-57dca212b9fb.png" alt="Breakit" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/366b4dc6-49c4-4978-9463-60aa1889cc41.png" alt="Di digital" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/e88f6873-0fbc-4d84-9342-cd5a80d8836f.png" alt="Tech.eu" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/641f2fc4-a041-47ed-bdbb-1976e11667be.png" alt="Luminar Ventures" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/3a0f1ba2-2ae5-4bbe-8f22-8502d1d9dafc.png" alt="Sting" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/f8235668-099f-4692-ac4b-ce829600be71.png" alt="Antler" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
             </div>
           </motion.div>
         </motion.div>
