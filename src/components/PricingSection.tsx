@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
-const PricingCard = ({ title, originalPrice, earlyBirdPrice, yearlyPrice, features }) => (
+const PricingCard = ({ title, frequency, originalPrice, earlyBirdPrice, yearlyPrice, features }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="relative backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 max-w-xl mx-auto"
+    className="relative backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 w-full mx-auto mb-8 last:mb-0 md:mb-0"
   >
-    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary px-4 py-1 rounded-full text-white text-sm">
+    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary px-4 py-1 rounded-full text-white text-sm whitespace-nowrap">
       Early Bird Program
     </div>
-    <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+    <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+    <p className="text-gray-400 mb-4">{frequency}</p>
     <div className="mb-6">
       <div className="text-gray-400 line-through mb-1">${originalPrice}/month</div>
       <div className="text-4xl font-bold text-white">${earlyBirdPrice}/month</div>
@@ -19,9 +20,9 @@ const PricingCard = ({ title, originalPrice, earlyBirdPrice, yearlyPrice, featur
     </div>
     <ul className="space-y-4 mb-8">
       {features.map((feature, index) => (
-        <li key={index} className="text-gray-300 flex items-center gap-2">
+        <li key={index} className="text-gray-300 flex items-start gap-2">
           <svg
-            className="w-5 h-5 text-primary"
+            className="w-5 h-5 text-primary flex-shrink-0 mt-1"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -33,7 +34,7 @@ const PricingCard = ({ title, originalPrice, earlyBirdPrice, yearlyPrice, featur
               d="M5 13l4 4L19 7"
             />
           </svg>
-          {feature}
+          <span>{feature}</span>
         </li>
       ))}
     </ul>
@@ -47,19 +48,50 @@ const PricingCard = ({ title, originalPrice, earlyBirdPrice, yearlyPrice, featur
 );
 
 const PricingSection = () => {
-  const plan = {
-    title: "Early Bird Plan",
-    originalPrice: "1,000",
-    earlyBirdPrice: "500",
-    yearlyPrice: "6,000",
-    features: [
-      "Unlimited tickets",
-      "Custom support integration",
-      "Any sync interval",
-      "Priority support",
-      "Custom features",
-    ],
-  };
+  const plans = [
+    {
+      title: "Bi-Weekly Reports",
+      frequency: "Reports every two weeks",
+      originalPrice: "800",
+      earlyBirdPrice: "300",
+      yearlyPrice: "3,600",
+      features: [
+        "Unlimited tickets during analysis period",
+        "Bi-weekly comprehensive reports",
+        "Custom support integration",
+        "Priority support",
+        "Custom features",
+      ],
+    },
+    {
+      title: "Weekly Reports",
+      frequency: "Reports every week",
+      originalPrice: "1,500",
+      earlyBirdPrice: "500",
+      yearlyPrice: "6,000",
+      features: [
+        "Unlimited tickets during analysis period",
+        "Weekly comprehensive reports",
+        "Custom support integration",
+        "Priority support",
+        "Custom features",
+      ],
+    },
+    {
+      title: "Daily Reports",
+      frequency: "Reports every day",
+      originalPrice: "3,000",
+      earlyBirdPrice: "1,000",
+      yearlyPrice: "12,000",
+      features: [
+        "Unlimited tickets during analysis period",
+        "Daily comprehensive reports",
+        "Custom support integration",
+        "Priority support",
+        "Custom features",
+      ],
+    },
+  ];
 
   return (
     <section className="py-20 px-4">
@@ -74,13 +106,15 @@ const PricingSection = () => {
             Early Bird Pricing
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Join our early bird program and get premium features at a fraction of the regular price. 
-            We'll sync your tickets at any interval you need - whether it's daily, weekly, or monthly.
+            Choose the perfect plan based on your reporting needs. All plans include unlimited 
+            ticket analysis during the reporting period.
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto">
-          <PricingCard {...plan} />
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {plans.map((plan, index) => (
+            <PricingCard key={index} {...plan} />
+          ))}
         </div>
       </div>
     </section>
