@@ -104,7 +104,8 @@ const FeaturesSection = () => {
             className="relative h-[600px] select-none"
           >
             <motion.div
-              initial={{ opacity: 0, yileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="absolute top-0 left-0 w-full h-full"
             >
