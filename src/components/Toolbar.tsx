@@ -47,6 +47,12 @@ const Toolbar = () => {
             >
               Hypertype
             </button>
+            <button 
+              onClick={() => window.location.href = '/demo'} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              Demo
+            </button>
           </nav>
           <Button
             className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-2"
