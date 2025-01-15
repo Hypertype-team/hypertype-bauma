@@ -35,7 +35,7 @@ const Demo = () => {
               <img
                 src="/lovable-uploads/8197dcdd-5c74-4b53-a25a-e2076a00cc25.png"
                 alt="Hypersight Logo"
-                className="h-8"
+                className="w-32 object-contain"
               />
             </SidebarHeader>
             <SidebarContent>
