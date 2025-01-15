@@ -1,25 +1,21 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
-const PricingCard = ({ title, price, features, isPopular = false }) => (
+const PricingCard = ({ title, originalPrice, earlyBirdPrice, yearlyPrice, features }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className={`relative backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 ${
-      isPopular ? "transform scale-105" : ""
-    }`}
+    className="relative backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 max-w-xl mx-auto"
   >
-    {isPopular && (
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary px-4 py-1 rounded-full text-white text-sm">
-        Most Popular
-      </div>
-    )}
+    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary px-4 py-1 rounded-full text-white text-sm">
+      Early Bird Program
+    </div>
     <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
     <div className="mb-6">
-      <div className="text-gray-400 line-through mb-1">Original price</div>
-      <div className="text-4xl font-bold text-white">${price}</div>
-      <div className="text-primary">Early bird pricing</div>
+      <div className="text-gray-400 line-through mb-1">${originalPrice}/month</div>
+      <div className="text-4xl font-bold text-white">${earlyBirdPrice}/month</div>
+      <div className="text-primary mt-1">${yearlyPrice} billed yearly</div>
     </div>
     <ul className="space-y-4 mb-8">
       {features.map((feature, index) => (
@@ -42,11 +38,7 @@ const PricingCard = ({ title, price, features, isPopular = false }) => (
       ))}
     </ul>
     <Button
-      className={`w-full ${
-        isPopular
-          ? "bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-          : "bg-white/10 hover:bg-white/20"
-      } text-white py-6`}
+      className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white py-6"
     >
       Get Started
     </Button>
@@ -54,42 +46,19 @@ const PricingCard = ({ title, price, features, isPopular = false }) => (
 );
 
 const PricingSection = () => {
-  const plans = [
-    {
-      title: "Starter",
-      price: "29",
-      features: [
-        "Up to 1,000 tickets/month",
-        "Basic analytics",
-        "Email support",
-        "1 team member",
-      ],
-    },
-    {
-      title: "Pro",
-      price: "99",
-      features: [
-        "Up to 10,000 tickets/month",
-        "Advanced analytics",
-        "Priority support",
-        "5 team members",
-        "Custom reports",
-      ],
-      isPopular: true,
-    },
-    {
-      title: "Enterprise",
-      price: "299",
-      features: [
-        "Unlimited tickets",
-        "Custom analytics",
-        "24/7 support",
-        "Unlimited team members",
-        "Custom integration",
-        "Dedicated account manager",
-      ],
-    },
-  ];
+  const plan = {
+    title: "Early Bird Plan",
+    originalPrice: "1,000",
+    earlyBirdPrice: "500",
+    yearlyPrice: "6,000",
+    features: [
+      "Unlimited tickets",
+      "Custom support integration",
+      "Any sync interval",
+      "Priority support",
+      "Custom features",
+    ],
+  };
 
   return (
     <section className="py-20 px-4">
@@ -101,17 +70,16 @@ const PricingSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Simple, transparent pricing
+            Early Bird Pricing
           </h2>
-          <p className="text-xl text-gray-300">
-            Choose the plan that best fits your needs
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Join our early bird program and get premium features at a fraction of the regular price. 
+            We'll sync your tickets at any interval you need - whether it's daily, weekly, or monthly.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
-            <PricingCard key={index} {...plan} />
-          ))}
+        <div className="max-w-3xl mx-auto">
+          <PricingCard {...plan} />
         </div>
       </div>
     </section>
