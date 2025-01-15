@@ -2,18 +2,33 @@ import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 
 const departmentData = [
-  { name: "Product Development", tickets: 245 },
-  { name: "Operations", tickets: 180 },
-  { name: "Payment Processing", tickets: 156 },
-  { name: "Customer Support", tickets: 210 }
+  { name: "Product Development", tickets: 245, color: "#4776e6" },
+  { name: "Operations", tickets: 180, color: "#8a56e9" },
+  { name: "Payment Processing", tickets: 156, color: "#9b87f5" },
+  { name: "Customer Support", tickets: 210, color: "#7E69AB" }
 ];
 
-const COLORS = ['#4776e6', '#8a56e9', '#9b87f5', '#7E69AB'];
+const CustomTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white/90 backdrop-blur-sm border border-gray-100 rounded-lg shadow-md p-3">
+        <p className="font-medium text-gray-800">{payload[0].name}</p>
+        <p className="text-sm text-gray-600">
+          <span className="font-medium">{payload[0].value}</span> tickets
+        </p>
+      </div>
+    );
+  }
+  return null;
+};
 
 const DepartmentTickets = () => {
   return (
-    <div className="rounded-xl border bg-white p-6 shadow-sm">
-      <h3 className="mb-4 text-lg font-medium">Tickets per Department</h3>
+    <div className="rounded-xl border bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl">
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold text-gray-800">Tickets per Department</h3>
+        <p className="mt-1 text-sm text-gray-500">Distribution of support tickets across teams</p>
+      </div>
       <div className="relative aspect-[4/3] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -21,21 +36,31 @@ const DepartmentTickets = () => {
               data={departmentData}
               cx="50%"
               cy="50%"
-              labelLine={false}
-              outerRadius={80}
-              fill="#8884d8"
+              innerRadius={60}
+              outerRadius={90}
+              paddingAngle={5}
               dataKey="tickets"
               nameKey="name"
-              label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
             >
-              {departmentData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              {departmentData.map((entry) => (
+                <Cell 
+                  key={entry.name} 
+                  fill={entry.color}
+                  stroke="white"
+                  strokeWidth={2}
+                />
               ))}
             </Pie>
-            <Tooltip 
-              formatter={(value, name) => [`${value} tickets`, name]}
+            <Tooltip content={<CustomTooltip />} />
+            <Legend 
+              layout="vertical" 
+              align="right"
+              verticalAlign="middle"
+              iconType="circle"
+              formatter={(value) => (
+                <span className="text-sm text-gray-600">{value}</span>
+              )}
             />
-            <Legend />
           </PieChart>
         </ResponsiveContainer>
       </div>
