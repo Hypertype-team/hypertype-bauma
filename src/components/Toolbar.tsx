@@ -24,7 +24,7 @@ const Toolbar = () => {
           <img
             src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
             alt="Hypersight Logo"
-            className="w-40 object-contain"
+            className="w-44 object-contain"
           />
         </div>
         <div className="flex items-center gap-8">
