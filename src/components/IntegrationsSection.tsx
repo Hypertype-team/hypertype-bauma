@@ -30,7 +30,7 @@ const IntegrationsSection = () => {
               >
                 <div className="w-32 h-32 rounded-full bg-[#9b87f5]/10 backdrop-blur-sm flex items-center justify-center">
                   <img
-                    src="/lovable-uploads/5c80a942-4a9e-4573-978a-f707a468bdd2.png"
+                    src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
                     alt="Hypersight"
                     className="w-20 h-20 object-contain"
                   />
