@@ -94,8 +94,8 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
-      <div className="container mx-auto max-w-7xl">
+    <section className="py-20">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ const PricingSection = () => {
         </motion.div>
 
         <div className="flex justify-center">
-          <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
             {plans.map((plan, index) => (
               <PricingCard key={index} {...plan} />
             ))}
