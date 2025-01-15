@@ -50,7 +50,7 @@ const PricingCard = ({ title, frequency, originalPrice, earlyBirdPrice, yearlyPr
 const PricingSection = () => {
   const plans = [
     {
-      title: "Bi-Weekly Reports",
+      title: "Essential Insights",
       frequency: "Reports every two weeks",
       originalPrice: "800",
       earlyBirdPrice: "300",
@@ -64,7 +64,7 @@ const PricingSection = () => {
       ],
     },
     {
-      title: "Weekly Reports",
+      title: "Pro Analytics",
       frequency: "Reports every week",
       originalPrice: "1,500",
       earlyBirdPrice: "500",
@@ -78,7 +78,7 @@ const PricingSection = () => {
       ],
     },
     {
-      title: "Daily Reports",
+      title: "Enterprise Intelligence",
       frequency: "Reports every day",
       originalPrice: "3,000",
       earlyBirdPrice: "1,000",
