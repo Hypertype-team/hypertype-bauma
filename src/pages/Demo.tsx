@@ -31,7 +31,7 @@ const Demo = () => {
       <SidebarProvider defaultOpen={true}>
         <div className="flex min-h-screen w-full">
           <Sidebar>
-            <SidebarHeader className="p-4">
+            <SidebarHeader className="flex items-center justify-center p-4">
               <img
                 src="/lovable-uploads/8197dcdd-5c74-4b53-a25a-e2076a00cc25.png"
                 alt="Hypersight Logo"
