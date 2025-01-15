@@ -4,7 +4,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { AreaChart, Area, XAxis, YAxis } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 const chartData = [
   { month: "Jan", energyIssues: 28, systemOptimization: 37 },
@@ -36,29 +36,31 @@ const SystemPerformanceChart = () => {
   return (
     <div className="rounded-xl border bg-white p-6 shadow-sm">
       <h3 className="mb-4 text-lg font-medium">System Performance Trends</h3>
-      <div className="h-[300px]">
+      <div className="h-[300px] w-full">
         <ChartContainer config={config}>
-          <AreaChart data={chartData}>
-            <XAxis dataKey="month" />
-            <YAxis />
-            <ChartTooltip content={<ChartTooltipContent />} />
-            <Area
-              type="monotone"
-              dataKey="energyIssues"
-              stroke="var(--color-energyIssues)"
-              fill="var(--color-energyIssues)"
-              fillOpacity={0.2}
-              stackId="1"
-            />
-            <Area
-              type="monotone"
-              dataKey="systemOptimization"
-              stroke="var(--color-systemOptimization)"
-              fill="var(--color-systemOptimization)"
-              fillOpacity={0.2}
-              stackId="1"
-            />
-          </AreaChart>
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+              <XAxis dataKey="month" />
+              <YAxis />
+              <ChartTooltip content={<ChartTooltipContent />} />
+              <Area
+                type="monotone"
+                dataKey="energyIssues"
+                stroke="var(--color-energyIssues)"
+                fill="var(--color-energyIssues)"
+                fillOpacity={0.2}
+                stackId="1"
+              />
+              <Area
+                type="monotone"
+                dataKey="systemOptimization"
+                stroke="var(--color-systemOptimization)"
+                fill="var(--color-systemOptimization)"
+                fillOpacity={0.2}
+                stackId="1"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </ChartContainer>
       </div>
     </div>
