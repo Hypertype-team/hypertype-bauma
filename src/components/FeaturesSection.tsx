@@ -20,7 +20,7 @@ const FeaturesSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setFrontImage(prev => prev === 'reports' ? 'dashboard' : 'reports');
-    }, 7000); // Increased interval for better user experience
+    }, 8000); // Longer interval for better user experience
     
     return () => clearInterval(interval);
   }, []);
@@ -112,32 +112,43 @@ const FeaturesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative h-[600px] select-none flex items-center justify-center perspective-[2000px]"
+            className="relative h-[600px] select-none flex items-center justify-center"
+            style={{
+              perspective: '2000px',
+              transformStyle: 'preserve-3d'
+            }}
           >
             {/* Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className={`absolute w-full h-full cursor-pointer transition-all duration-[1200ms] ease-in-out
-                ${frontImage === 'dashboard' ? 'z-20 opacity-100' : 'z-10 opacity-70'}`}
-              onClick={() => setFrontImage('dashboard')}
+              className={`absolute w-full h-full cursor-pointer`}
               style={{
-                transform: `perspective(2000px) ${frontImage === 'dashboard' ? 
-                  'translateZ(50px) translateX(0) translateY(0) rotateY(0deg)' : 
-                  'translateZ(-300px) translateX(-25%) translateY(-10%) rotateY(-15deg)'}`
+                transition: 'all 1.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: `
+                  ${frontImage === 'dashboard' 
+                    ? 'translateZ(100px) translateX(-5%) translateY(-5%) rotateY(-5deg)' 
+                    : 'translateZ(-400px) translateX(-35%) translateY(-15%) rotateY(-25deg)'}
+                `,
+                opacity: frontImage === 'dashboard' ? 1 : 0.6,
+                zIndex: frontImage === 'dashboard' ? 20 : 10
               }}
+              onClick={() => setFrontImage('dashboard')}
             >
               <img
                 src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
                 alt="Hypersight Dashboard"
-                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-[1200ms] ease-in-out
-                  ${frontImage === 'dashboard' ? 'scale-105' : 'scale-85'}`}
+                className="w-full h-auto rounded-2xl shadow-2xl"
                 style={{ 
                   maxWidth: "90%",
                   margin: "0 auto",
-                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.6' : '0.3'}))
-                          brightness(${frontImage === 'dashboard' ? '1' : '0.9'})`,
+                  transition: 'all 1.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: `scale(${frontImage === 'dashboard' ? '1.05' : '0.95'})`,
+                  filter: `
+                    drop-shadow(0 ${frontImage === 'dashboard' ? '40px' : '20px'} 
+                    50px rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.6' : '0.3'}))
+                    brightness(${frontImage === 'dashboard' ? '1' : '0.85'})
+                  `
                 }}
               />
             </motion.div>
@@ -146,26 +157,33 @@ const FeaturesSection = () => {
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className={`absolute w-full h-full cursor-pointer transition-all duration-[1200ms] ease-in-out
-                ${frontImage === 'reports' ? 'z-20 opacity-100' : 'z-10 opacity-70'}`}
-              onClick={() => setFrontImage('reports')}
+              className={`absolute w-full h-full cursor-pointer`}
               style={{
-                transform: `perspective(2000px) ${frontImage === 'reports' ? 
-                  'translateZ(50px) translateX(0) translateY(0) rotateY(0deg)' : 
-                  'translateZ(-300px) translateX(25%) translateY(10%) rotateY(15deg)'}`
+                transition: 'all 1.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: `
+                  ${frontImage === 'reports' 
+                    ? 'translateZ(100px) translateX(5%) translateY(5%) rotateY(5deg)' 
+                    : 'translateZ(-400px) translateX(35%) translateY(15%) rotateY(25deg)'}
+                `,
+                opacity: frontImage === 'reports' ? 1 : 0.6,
+                zIndex: frontImage === 'reports' ? 20 : 10
               }}
+              onClick={() => setFrontImage('reports')}
             >
               <img
                 src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
                 alt="Hypersight Reports"
-                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-[1200ms] ease-in-out
-                  ${frontImage === 'reports' ? 'scale-105' : 'scale-85'}`}
+                className="w-full h-auto rounded-2xl shadow-2xl"
                 style={{ 
                   maxWidth: "90%",
                   margin: "0 auto",
-                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '40px' : '20px'} 50px rgb(0 0 0 / ${frontImage === 'reports' ? '0.6' : '0.3'}))
-                          brightness(${frontImage === 'reports' ? '1' : '0.9'})`,
+                  transition: 'all 1.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: `scale(${frontImage === 'reports' ? '1.05' : '0.95'})`,
+                  filter: `
+                    drop-shadow(0 ${frontImage === 'reports' ? '40px' : '20px'} 
+                    50px rgb(0 0 0 / ${frontImage === 'reports' ? '0.6' : '0.3'}))
+                    brightness(${frontImage === 'reports' ? '1' : '0.85'})
+                  `
                 }}
               />
             </motion.div>
