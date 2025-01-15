@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const IntegrationsSection = () => {
   const integrations = [
-    { name: "Zendesk", logo: "/lovable-uploads/4bf29358-ac97-4c98-94fd-b6afa234ceb7.png" },
-    { name: "Intercom", logo: "/lovable-uploads/fe196bd1-4fe7-4741-90b3-1f9a23f33545.png" },
-    { name: "Freshdesk", logo: "/lovable-uploads/8686579e-551d-4287-8280-93444ddd945c.png" },
-    { name: "HubSpot", logo: "/lovable-uploads/0f3bf8be-3e80-4ee8-bf96-66a17672ccf5.png" },
-    { name: "Salesforce", logo: "/lovable-uploads/32aa1dc1-bcab-4433-b372-7af6c64ef6ee.png" },
+    { name: "Zendesk", logo: "/lovable-uploads/ac09c7d8-1ea4-4b5c-805e-1c06a08a158d.png" },
+    { name: "Intercom", logo: "/lovable-uploads/0d49ea4a-140e-4f5c-9274-eb01ad8c50f2.png" },
+    { name: "Freshdesk", logo: "/lovable-uploads/7e7127fb-d7da-47c0-828d-fc1724b0c7f3.png" },
+    { name: "HubSpot", logo: "/lovable-uploads/82dfe857-3fff-4bc7-92d4-ae7f3829c15d.png" },
+    { name: "Salesforce", logo: "/lovable-uploads/14e8106c-3784-42e4-a732-6674b1e928e7.png" },
   ];
 
   return (
