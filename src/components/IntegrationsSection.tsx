@@ -40,9 +40,12 @@ const IntegrationsSection = () => {
               {/* Integration logos in a circle */}
               {integrations.map((integration, index) => {
                 const angle = (index * 360) / integrations.length;
-                const radius = 120; // Reduced radius for mobile, will be larger on desktop
+                const radius = 120;
+                const desktopRadius = radius * 1.33;
                 const x = radius * Math.cos((angle - 90) * (Math.PI / 180));
                 const y = radius * Math.sin((angle - 90) * (Math.PI / 180));
+                const desktopX = desktopRadius * Math.cos((angle - 90) * (Math.PI / 180));
+                const desktopY = desktopRadius * Math.sin((angle - 90) * (Math.PI / 180));
 
                 return (
                   <motion.div
@@ -50,13 +53,13 @@ const IntegrationsSection = () => {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 * index }}
-                    className="absolute w-12 h-12 md:w-20 md:h-20"
+                    className="absolute w-12 h-12 md:w-20 md:h-20 transition-all duration-300"
                     style={{
-                      left: `calc(50% + ${x}px - 24px)`, // Adjusted for smaller mobile size
-                      top: `calc(50% + ${y}px - 24px)`, // Adjusted for smaller mobile size
-                      '@media (min-width: 768px)': {
-                        left: `calc(50% + ${x * 1.33}px - 40px)`, // Scale up for desktop
-                        top: `calc(50% + ${y * 1.33}px - 40px)`, // Scale up for desktop
+                      left: `calc(50% + ${x}px - 24px)`,
+                      top: `calc(50% + ${y}px - 24px)`,
+                      [`@media (min-width: 768px)`]: {
+                        left: `calc(50% + ${desktopX}px - 40px)`,
+                        top: `calc(50% + ${desktopY}px - 40px)`,
                       }
                     }}
                   >
