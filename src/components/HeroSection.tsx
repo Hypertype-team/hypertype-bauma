@@ -41,9 +41,8 @@ const HeroSection = () => {
             className="text-lg text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed"
           >
             Your support tickets are more than tasks – they're a treasure map. 
-            Hypersight analyzes and synthesizes your support tickets, generating powerful reports 
-            that direct your organization and help you make data-driven decisions, prioritize 
-            confidently, and stay laser-focused on what makes you better.
+            Hypersight analyzes your tickets to help you make data-driven decisions, 
+            prioritize effectively, and focus on what matters most.
           </motion.p>
 
           <motion.div
