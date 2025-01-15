@@ -52,7 +52,7 @@ const FeaturesSection = () => {
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Hypersight synthesizes your ticket data into actionable insights,
-            helping you make informed decisions to improve your product.
+            helping you make informed business decisions.
           </p>
         </motion.div>
 
