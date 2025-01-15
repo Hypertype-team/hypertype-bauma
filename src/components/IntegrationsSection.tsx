@@ -21,17 +21,6 @@ const IntegrationsSection = () => {
             className="relative"
           >
             <div className="relative w-[400px] h-[400px] mx-auto flex items-center justify-center">
-              {/* SVG Container for connections */}
-              <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }}>
-                <defs>
-                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#9b87f5" stopOpacity="0.4" />
-                    <stop offset="50%" stopColor="#9b87f5" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#9b87f5" stopOpacity="0.4" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
               {/* Center Hypersight logo */}
               <motion.div
                 initial={{ scale: 0 }}
@@ -68,25 +57,31 @@ const IntegrationsSection = () => {
                     }}
                   >
                     {/* Connection line */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                      className="absolute inset-0 -z-10"
+                    <svg
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] -z-10"
+                      style={{
+                        transform: `rotate(${angle}deg)`,
+                      }}
                     >
-                      <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }}>
-                        <motion.path
-                          d={`M ${48} ${48} L ${200 - (x + 48)} ${200 - (y + 48)}`}
-                          stroke="url(#lineGradient)"
-                          strokeWidth="2"
-                          fill="none"
-                          initial={{ pathLength: 0 }}
-                          animate={{ pathLength: 1 }}
-                          transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                          className="animate-pulse"
-                        />
-                      </svg>
-                    </motion.div>
+                      <motion.line
+                        x1="50%"
+                        y1="50%"
+                        x2="100%"
+                        y2="50%"
+                        stroke="url(#gradient)"
+                        strokeWidth="2"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 0.6 }}
+                        transition={{ duration: 1, delay: 0.2 * index }}
+                        className="animate-pulse"
+                      />
+                      <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#9b87f5" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#9b87f5" stopOpacity="0.2" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
                     
                     {/* Logo container */}
                     <div className="w-24 h-24 p-4 rounded-xl bg-[#9b87f5]/10 backdrop-blur-sm border border-[#9b87f5]/20 hover:border-[#9b87f5]/50 transition-colors group">
