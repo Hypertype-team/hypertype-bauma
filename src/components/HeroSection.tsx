@@ -22,7 +22,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4 }}
             className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#535050] to-white bg-clip-text text-transparent"
           >
-            Stop Guesstimating
+            Know Your Customers. For Real.
           </motion.h1>
 
           <motion.p
