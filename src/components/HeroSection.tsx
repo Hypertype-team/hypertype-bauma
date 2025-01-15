@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-20">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent opacity-30" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(71,118,230,0.2)_0%,rgba(138,86,233,0.1)_50%,transparent_100%)] animate-gradient-shift bg-[length:200%_200%]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(71,118,230,0.1)_0%,transparent_100%)] animate-gradient-shift bg-[length:200%_200%]" />
       </div>
       
       <div className="container mx-auto relative z-10">
