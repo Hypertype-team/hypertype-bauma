@@ -29,7 +29,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
             Unlock the data from your support tickets
           </motion.p>
