@@ -80,7 +80,7 @@ const HeroSection = () => {
               <img src="/lovable-uploads/3f22f212-acc6-460e-96b0-fbf9f0cdd08f.png" alt="Tech.eu" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
               <img src="/lovable-uploads/a6fa5011-77ea-48e8-bf98-3799ce5b016e.png" alt="Luminar Ventures" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
               <img src="/lovable-uploads/a80c2b3d-8898-478b-8798-73180313c739.png" alt="Sting" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
-              <img src="/lovable-uploads/f8235668-099f-4692-ac4b-ce829600be71.png" alt="Antler" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
+              <img src="/lovable-uploads/b8098f2a-7fc5-40fe-b1d9-9384a3da29ce.png" alt="Antler" className="h-8 opacity-50 hover:opacity-75 transition-opacity" />
             </div>
           </motion.div>
         </motion.div>
