@@ -32,7 +32,7 @@ const IntegrationsSection = () => {
                   <img
                     src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
                     alt="Hypersight"
-                    className="w-20 h-20 object-contain"
+                    className="w-24 h-24 object-contain" // Increased from w-20 h-20 to w-24 h-24
                   />
                 </div>
               </motion.div>
