@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const FeatureCard = ({ title, description, icon, index }) => (
   <motion.div
@@ -16,6 +16,15 @@ const FeatureCard = ({ title, description, icon, index }) => (
 
 const FeaturesSection = () => {
   const [frontImage, setFrontImage] = useState<'reports' | 'dashboard'>('reports');
+  
+  // Auto-swap images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFrontImage(prev => prev === 'reports' ? 'dashboard' : 'reports');
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
   
   const features = [
     {
@@ -98,34 +107,37 @@ const FeaturesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Images Stack */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative h-[600px] select-none"
+            className="relative h-[600px] select-none flex items-center justify-center"
           >
             {/* Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`absolute top-10 left-10 w-full h-full cursor-pointer
-                ${frontImage === 'dashboard' ? 'z-20' : 'z-10'}`}
+              className={`absolute w-full h-full cursor-pointer transition-all duration-700 ease-in-out
+                ${frontImage === 'dashboard' ? 'z-20 opacity-100' : 'z-10 opacity-60'}`}
               onClick={() => setFrontImage('dashboard')}
+              style={{
+                transform: `perspective(2000px) ${frontImage === 'dashboard' ? 
+                  'translateZ(0) translateX(0)' : 
+                  'translateZ(-100px) translateX(-5%)'}`
+              }}
             >
               <img
                 src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
                 alt="Hypersight Dashboard"
-                className={`w-full h-auto rounded-2xl shadow-2xl transform transition-all duration-500 ease-out
-                  ${frontImage === 'dashboard' 
-                    ? 'rotate-0 scale-105 hover:rotate-0' 
-                    : 'rotate-6 hover:rotate-3'}`}
+                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-700 ease-in-out
+                  ${frontImage === 'dashboard' ? 'scale-105' : 'scale-95'}`}
                 style={{ 
-                  maxWidth: frontImage === 'dashboard' ? "85%" : "90%",
-                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '25px' : '35px'} ${frontImage === 'dashboard' ? '25px' : '35px'} rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.3' : '0.25'}))`,
-                  transformOrigin: "center center",
+                  maxWidth: "85%",
+                  margin: "0 auto",
+                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '30px' : '20px'} 40px rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.4' : '0.2'}))`,
                 }}
               />
             </motion.div>
@@ -134,28 +146,31 @@ const FeaturesSection = () => {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className={`absolute top-0 left-0 w-full h-full cursor-pointer
-                ${frontImage === 'reports' ? 'z-20' : 'z-10'}`}
+              className={`absolute w-full h-full cursor-pointer transition-all duration-700 ease-in-out
+                ${frontImage === 'reports' ? 'z-20 opacity-100' : 'z-10 opacity-60'}`}
               onClick={() => setFrontImage('reports')}
+              style={{
+                transform: `perspective(2000px) ${frontImage === 'reports' ? 
+                  'translateZ(0) translateX(0)' : 
+                  'translateZ(-100px) translateX(5%)'}`
+              }}
             >
               <img
                 src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
                 alt="Hypersight Reports"
-                className={`w-full h-auto rounded-2xl shadow-2xl transform transition-all duration-500 ease-out
-                  ${frontImage === 'reports' 
-                    ? 'rotate-0 scale-105 hover:rotate-0' 
-                    : '-rotate-3 hover:rotate-0'}`}
+                className={`w-full h-auto rounded-2xl shadow-2xl transition-all duration-700 ease-in-out
+                  ${frontImage === 'reports' ? 'scale-105' : 'scale-95'}`}
                 style={{ 
-                  maxWidth: frontImage === 'reports' ? "85%" : "90%",
-                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '25px' : '35px'} ${frontImage === 'reports' ? '25px' : '35px'} rgb(0 0 0 / ${frontImage === 'reports' ? '0.3' : '0.25'}))`,
-                  transformOrigin: "center center",
+                  maxWidth: "85%",
+                  margin: "0 auto",
+                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '30px' : '20px'} 40px rgb(0 0 0 / ${frontImage === 'reports' ? '0.4' : '0.2'}))`,
                 }}
               />
             </motion.div>
           </motion.div>
 
           {/* Feature Cards */}
-          <div className="space-y-6">
+          <div className="space-y-8 max-w-xl ml-auto">
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} index={index} />
             ))}
