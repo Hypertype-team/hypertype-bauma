@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const FeatureCard = ({ title, description, icon, index }) => (
   <motion.div
@@ -14,6 +15,8 @@ const FeatureCard = ({ title, description, icon, index }) => (
 );
 
 const FeaturesSection = () => {
+  const [frontImage, setFrontImage] = useState<'reports' | 'dashboard'>('reports');
+  
   const features = [
     {
       title: "Data-Driven Insights",
@@ -103,38 +106,48 @@ const FeaturesSection = () => {
             transition={{ duration: 0.5 }}
             className="relative h-[600px] select-none"
           >
-            {/* Back Image */}
+            {/* Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute top-10 left-10 w-full h-full z-10"
+              className={`absolute top-10 left-10 w-full h-full cursor-pointer
+                ${frontImage === 'dashboard' ? 'z-20' : 'z-10'}`}
+              onClick={() => setFrontImage('dashboard')}
             >
               <img
                 src="/lovable-uploads/ea8e9384-86a2-4501-b686-5a95b634d919.png"
                 alt="Hypersight Dashboard"
-                className="w-full h-auto rounded-2xl shadow-2xl transform rotate-6 hover:rotate-3 transition-all duration-500 ease-out"
+                className={`w-full h-auto rounded-2xl shadow-2xl transform transition-all duration-500 ease-out
+                  ${frontImage === 'dashboard' 
+                    ? 'rotate-0 scale-105 hover:rotate-0' 
+                    : 'rotate-6 hover:rotate-3'}`}
                 style={{ 
-                  maxWidth: "90%",
-                  filter: "drop-shadow(0 35px 35px rgb(0 0 0 / 0.25))",
+                  maxWidth: frontImage === 'dashboard' ? "85%" : "90%",
+                  filter: `drop-shadow(0 ${frontImage === 'dashboard' ? '25px' : '35px'} ${frontImage === 'dashboard' ? '25px' : '35px'} rgb(0 0 0 / ${frontImage === 'dashboard' ? '0.3' : '0.25'}))`,
                   transformOrigin: "center center",
                 }}
               />
             </motion.div>
-            {/* Front Image */}
+            {/* Reports Image */}
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute top-0 left-0 w-full h-full z-20"
+              className={`absolute top-0 left-0 w-full h-full cursor-pointer
+                ${frontImage === 'reports' ? 'z-20' : 'z-10'}`}
+              onClick={() => setFrontImage('reports')}
             >
               <img
                 src="/lovable-uploads/b48dc1f3-2fab-4171-b95b-80ec0562821d.png"
                 alt="Hypersight Reports"
-                className="w-full h-auto rounded-2xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-all duration-500 ease-out"
+                className={`w-full h-auto rounded-2xl shadow-2xl transform transition-all duration-500 ease-out
+                  ${frontImage === 'reports' 
+                    ? 'rotate-0 scale-105 hover:rotate-0' 
+                    : '-rotate-3 hover:rotate-0'}`}
                 style={{ 
-                  maxWidth: "85%",
-                  filter: "drop-shadow(0 25px 25px rgb(0 0 0 / 0.3))",
+                  maxWidth: frontImage === 'reports' ? "85%" : "90%",
+                  filter: `drop-shadow(0 ${frontImage === 'reports' ? '25px' : '35px'} ${frontImage === 'reports' ? '25px' : '35px'} rgb(0 0 0 / ${frontImage === 'reports' ? '0.3' : '0.25'}))`,
                   transformOrigin: "center center",
                 }}
               />
