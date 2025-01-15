@@ -45,9 +45,9 @@ const FeaturesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-20 lg:mb-32"
+          className="text-center mb-24 lg:mb-40" // Increased spacing here
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary">
             Your Support Data is Your Goldmine
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -57,11 +57,11 @@ const FeaturesSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          <div className="lg:col-span-7 mb-12 lg:mb-0">
+          <div className="lg:col-span-7 mb-20 lg:mb-0"> {/* Increased bottom margin */}
             <ImageShowcase frontImage={frontImage} setFrontImage={setFrontImage} />
           </div>
 
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-12"> {/* Increased space between cards */}
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} index={index} />
             ))}
