@@ -11,7 +11,7 @@ const ImageShowcase = ({ frontImage, setFrontImage }: ImageShowcaseProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative h-[180px] xs:h-[220px] sm:h-[280px] md:h-[320px] lg:h-[420px] select-none"
+      className="relative h-[180px] xs:h-[220px] sm:h-[280px] md:h-[320px] lg:h-[420px] select-none lg:-mt-24"
       style={{
         perspective: '2000px',
       }}
