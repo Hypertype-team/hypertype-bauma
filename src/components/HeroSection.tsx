@@ -22,7 +22,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4 }}
             className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#535050] to-white bg-clip-text text-transparent"
           >
-            Stop Guestimating
+            Stop Guesstimating
           </motion.h1>
 
           <motion.p
@@ -31,7 +31,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto"
           >
-            Use your support tickets to know exactly what to focus on with a data-driven approach
+            Use your support tickets as product direction with Hypersight
           </motion.p>
 
           <motion.p
@@ -40,10 +40,10 @@ const HeroSection = () => {
             transition={{ delay: 0.8 }}
             className="text-lg text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed"
           >
-            Your support tickets are more than tasks—they're a treasure trove of customer insights. 
+            Your support tickets are more than tasks – they're a treasure map. 
             Hypersight analyzes and synthesizes your support tickets, generating powerful reports 
-            that help you make data-driven decisions, prioritize with confidence, and stay 
-            laser-focused on what matters most.
+            that direct your organization and help you make data-driven decisions, prioritize 
+            confidently, and stay laser-focused on what makes you better.
           </motion.p>
 
           <motion.div
