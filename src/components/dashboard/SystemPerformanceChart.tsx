@@ -41,10 +41,19 @@ const SystemPerformanceChart = () => {
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart 
               data={chartData} 
-              margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
+              margin={{ top: 5, right: 5, left: 0, bottom: 5 }}
             >
-              <XAxis dataKey="month" />
-              <YAxis />
+              <XAxis 
+                dataKey="month" 
+                tickLine={false}
+                axisLine={true}
+                dy={10}
+              />
+              <YAxis 
+                tickLine={false}
+                axisLine={true}
+                dx={-10}
+              />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Area
                 type="monotone"
