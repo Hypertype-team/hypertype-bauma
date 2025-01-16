@@ -54,7 +54,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="flex justify-center gap-4 mb-20"
+            className="flex justify-center gap-4 mb-12"
           >
             <Button
               className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-8 py-6 text-lg rounded-lg"
@@ -69,6 +69,19 @@ const HeroSection = () => {
             >
               Learn More
             </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            className="mb-16"
+          >
+            <img
+              src="/lovable-uploads/0f3bf8be-3e80-4ee8-bf96-66a17672ccf5.png"
+              alt="Hypersight Demo"
+              className="mx-auto max-w-[90%] md:max-w-[80%] lg:max-w-[70%] rounded-lg shadow-2xl border border-white/10"
+            />
           </motion.div>
 
           {/* Logos Section */}
