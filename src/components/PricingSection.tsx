@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { BadgePercent, CalendarCheck, Zap } from "lucide-react";
+import { BadgePercent, CalendarCheck, Zap, Globe, MessageSquare, Languages } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
 const PricingSection = () => {
@@ -20,6 +20,50 @@ const PricingSection = () => {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             One plan for everyone with unlimited generations. Expand as your needs grow.
           </p>
+        </motion.div>
+
+        {/* Bauma special offer - Now more prominent at the top */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
+          <Card className="backdrop-blur-lg bg-gradient-to-r from-primary/30 to-secondary/30 border border-white/20 rounded-2xl overflow-hidden shadow-xl relative">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+            <CardHeader className="pb-4">
+              <CardTitle className="text-2xl font-bold text-white flex items-center">
+                <BadgePercent className="h-6 w-6 mr-2 text-primary" />
+                BAUMA SPECIAL OFFER
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-3">
+                  <CalendarCheck className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-bold text-xl">20% DISCOUNT</p>
+                    <p className="text-gray-300">If signing during Bauma week</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CalendarCheck className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-bold text-xl">10% DISCOUNT</p>
+                    <p className="text-gray-300">If signing week after Bauma</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter className="pt-0">
+              <Button
+                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white py-6"
+                onClick={() => window.open('https://hypertype.fillout.com/talktosales?_gl=1*fyovem*_gcl_au*MTQxOTAzNDA1OC4xNzMxNTgzNTYz', '_blank')}
+              >
+                Get This Offer Now
+              </Button>
+            </CardFooter>
+          </Card>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -49,12 +93,16 @@ const PricingSection = () => {
                     <span className="text-gray-300">Unlimited AI generations</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Zap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <MessageSquare className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-gray-300">Custom machinery knowledge base</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Zap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300">Support system integrations</span>
+                    <Globe className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300"><strong>Integrates with all major support systems and email providers</strong></span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Languages className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-300"><strong>Answers in over 95 different languages</strong></span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Zap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -93,37 +141,6 @@ const PricingSection = () => {
                   <div className="flex items-baseline">
                     <span className="text-2xl font-bold text-white">$50</span>
                     <span className="text-white/70 ml-2 text-sm">per 1000 tickets synced</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Special offer card */}
-            <Card className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg relative">
-              <div className="absolute -top-2 right-4 bg-gradient-to-r from-primary to-secondary px-3 py-1 rounded-full text-white text-xs font-medium">
-                Limited Time
-              </div>
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-bold text-white flex items-center">
-                  <BadgePercent className="h-5 w-5 mr-2 text-primary" />
-                  Bauma Special Offer
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CalendarCheck className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-white font-medium">20% discount</p>
-                      <p className="text-gray-400 text-sm">If signing during Bauma week</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CalendarCheck className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-white font-medium">10% discount</p>
-                      <p className="text-gray-400 text-sm">If signing week after Bauma</p>
-                    </div>
                   </div>
                 </div>
               </CardContent>
