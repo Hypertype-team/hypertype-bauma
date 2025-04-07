@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
@@ -27,7 +28,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4 }}
             className="text-4xl sm:text-5xl md:text-7xl font-thin mb-4 md:mb-6 bg-gradient-to-r from-[#535050] to-white bg-clip-text text-transparent px-4"
           >
-            Know Your Customers. For Real.
+            Empower Manufacturing Support
           </motion.h1>
 
           <motion.p
@@ -36,7 +37,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6 }}
             className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto bg-gradient-to-r from-[#eec5bd] to-[#96a6fd] bg-clip-text text-transparent px-4"
           >
-            Unlock the data from your support tickets
+            AI-powered knowledge management for machinery manufacturers
           </motion.p>
 
           <motion.p
@@ -45,9 +46,9 @@ const HeroSection = () => {
             transition={{ delay: 0.8 }}
             className="text-base md:text-lg text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed px-4"
           >
-            Your support tickets are more than tasks – they're a treasure map. 
-            Hypersight analyzes your tickets to help you make data-driven decisions, 
-            prioritize effectively, and focus on what matters most.
+            Hypertype syncs all your technical documentation, manuals, and catalogs into an 
+            AI organizational brain, empowering your sales, service, and support teams to 
+            respond to customer inquiries in seconds instead of minutes.
           </motion.p>
 
           <motion.div
@@ -78,7 +79,7 @@ const HeroSection = () => {
             transition={{ delay: 1.2 }}
             className="mt-8 md:mt-16"
           >
-            <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">As seen in and backed by</p>
+            <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">Trusted by leading manufacturers</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 items-center justify-items-center px-4">
               <img src="/lovable-uploads/4d30b938-fed0-47b5-8014-6116fe6fa1db.png" alt="Wired" className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
               <img src="/lovable-uploads/40696f0c-0512-453e-81d7-823afb5b0525.png" alt="Breakit" className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />

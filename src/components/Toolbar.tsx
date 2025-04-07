@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
@@ -23,8 +24,8 @@ const Toolbar = () => {
       <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center justify-center w-48">
           <img
-            src="/lovable-uploads/c8a54598-c4ba-4951-b583-b599b6ad2e7e.png"
-            alt="Hypersight Logo"
+            src="/lovable-uploads/9fe56b51-bb4e-4019-8bf9-a2efe848460a.png"
+            alt="Hypertype Logo"
             className="w-44 object-contain"
           />
         </div>
@@ -48,7 +49,7 @@ const Toolbar = () => {
               rel="noopener noreferrer"
               className="text-white/80 hover:text-white transition-colors text-sm font-medium"
             >
-              Hypertype
+              About Us
             </a>
           </nav>
           <Button
