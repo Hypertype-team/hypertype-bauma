@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 const HeroSection = () => {
@@ -79,7 +80,7 @@ const HeroSection = () => {
           delay: 1.2
         }} className="mt-8 md:mt-16">
             <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">As Mentioned and Backed by</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 items-center justify-items-center px-4">
+            <div className="mx-auto max-w-6xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 items-center justify-items-center px-4">
               <img src="/lovable-uploads/4d30b938-fed0-47b5-8014-6116fe6fa1db.png" alt="Wired" className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
               <img src="/lovable-uploads/40696f0c-0512-453e-81d7-823afb5b0525.png" alt="Breakit" className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
               <img src="/lovable-uploads/2d335a7f-ab0e-4913-a639-863a380fa80c.png" alt="Di digital" className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
