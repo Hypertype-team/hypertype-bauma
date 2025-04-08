@@ -1,20 +1,44 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Quote } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import { useEffect, useState } from "react";
 
 const CustomerStories = () => {
-  const customers = [
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const companies = [
     {
       name: "TechMachine Industries",
       logo: "/lovable-uploads/61285a54-795a-4658-a993-aa3b567c34e6.png",
-      quote: "Hypertype transformed our customer service. Our support team now resolves technical inquiries in 75% less time, dramatically improving customer satisfaction while reducing costs.",
-      person: "Sarah Johnson, Head of Customer Support"
     },
     {
       name: "GlobalEquip Manufacturing",
       logo: "/lovable-uploads/18e746c3-ea14-4381-8d1e-acac898e1b02.png",
-      quote: "Before Hypertype, our sales team spent hours searching for technical specifications. Now they get instant answers, closing deals 30% faster and with higher accuracy.",
+    },
+    {
+      name: "Bauma Equipment",
+      logo: "/lovable-uploads/4bf29358-ac97-4c98-94fd-b6afa234ceb7.png",
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "We struggled to find the right answers fast enough in Zendesk. With Hypertype, our team now gets specialized, instant responses—dramatically improving our after-sales support.",
+      person: "Sarah Johnson, Head of Customer Support"
+    },
+    {
+      quote: "We heard about Hypertype from another Zendesk team and gave it a try—game changer. It surfaces precise answers instantly, and our support has never been faster or more reliable.",
       person: "Michael Chen, Sales Director"
+    },
+    {
+      quote: "We tried multiple solutions, but none could handle our multilingual support needs—until Hypertype. It fetches the right language and context instantly, something others just couldn't deliver.",
+      person: "Alexandra Rivera, Global Support Manager"
     }
   ];
 
@@ -37,37 +61,71 @@ const CustomerStories = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-          {customers.map((customer, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <Card className="overflow-hidden bg-black/30 border border-white/10 backdrop-blur-sm">
-                <CardContent className="p-8">
-                  <div className="flex flex-col-reverse md:flex-row gap-6 items-center md:items-start">
-                    <div className="flex-1">
-                      <Quote className="text-primary h-8 w-8 mb-4 opacity-60" />
-                      <p className="text-gray-300 italic mb-6 leading-relaxed">
-                        "{customer.quote}"
-                      </p>
-                      <p className="text-white font-medium">{customer.person}</p>
-                    </div>
-                    <div className="flex items-center justify-center md:flex-shrink-0 md:w-1/3">
-                      <img
-                        src={customer.logo}
-                        alt={customer.name}
-                        className="h-16 md:h-24 lg:h-32 object-contain filter brightness-90"
-                      />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        {/* Company Logos */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-20"
+        >
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 py-8 px-4 backdrop-blur-sm bg-black/20 rounded-2xl border border-white/10">
+            {companies.map((company, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="flex flex-col items-center"
+              >
+                <div className="h-16 md:h-20 w-48 md:w-56 flex items-center justify-center p-2">
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="h-full object-contain filter brightness-100"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Customer Quotes Carousel */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="mb-12"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-white">
+            What Our Customers Say
+          </h3>
+          
+          {isMounted && (
+            <Carousel className="w-full max-w-4xl mx-auto">
+              <CarouselContent>
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="md:basis-full">
+                    <Card className="overflow-hidden bg-black/30 border border-white/10 backdrop-blur-sm">
+                      <CardContent className="p-8 md:p-10">
+                        <div className="flex flex-col items-center text-center">
+                          <Quote className="text-primary h-10 w-10 mb-6 opacity-60" />
+                          <p className="text-gray-300 italic mb-8 text-lg md:text-xl leading-relaxed">
+                            "{testimonial.quote}"
+                          </p>
+                          <p className="text-white font-medium">{testimonial.person}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center mt-6 gap-2">
+                <CarouselPrevious className="relative inset-0 translate-y-0 h-10 w-10 bg-primary/20 hover:bg-primary/30 border-white/10" />
+                <CarouselNext className="relative inset-0 translate-y-0 h-10 w-10 bg-primary/20 hover:bg-primary/30 border-white/10" />
+              </div>
+            </Carousel>
+          )}
+        </motion.div>
       </div>
     </section>
   );
