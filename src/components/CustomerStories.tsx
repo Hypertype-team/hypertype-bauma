@@ -29,16 +29,13 @@ const CustomerStories = () => {
 
   const testimonials = [
     {
-      quote: "We struggled to find the right answers fast enough in Zendesk. With Hypertype, our team now gets specialized, instant responses—dramatically improving our after-sales support.",
-      person: "Sarah Johnson, Head of Customer Support"
+      quote: "We struggled to find the right answers fast enough in Zendesk. With Hypertype, our team now gets specialized, instant responses—dramatically improving our after-sales support."
     },
     {
-      quote: "We heard about Hypertype from another Zendesk team and gave it a try—game changer. It surfaces precise answers instantly, and our support has never been faster or more reliable.",
-      person: "Michael Chen, Sales Director"
+      quote: "We heard about Hypertype from another Zendesk team and gave it a try—game changer. It surfaces precise answers instantly, and our support has never been faster or more reliable."
     },
     {
-      quote: "We tried multiple solutions, but none could handle our multilingual support needs—until Hypertype. It fetches the right language and context instantly, something others just couldn't deliver.",
-      person: "Alexandra Rivera, Global Support Manager"
+      quote: "We tried multiple solutions, but none could handle our multilingual support needs—until Hypertype. It fetches the right language and context instantly, something others just couldn't deliver."
     }
   ];
 
@@ -112,7 +109,6 @@ const CustomerStories = () => {
                           <p className="text-gray-300 italic mb-8 text-lg md:text-xl leading-relaxed">
                             "{testimonial.quote}"
                           </p>
-                          <p className="text-white font-medium">{testimonial.person}</p>
                         </div>
                       </CardContent>
                     </Card>
