@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Quote } from "lucide-react";
@@ -7,7 +6,7 @@ const CustomerStories = () => {
   const customers = [
     {
       name: "TechMachine Industries",
-      logo: "/lovable-uploads/366b4dc6-49c4-4978-9463-60aa1889cc41.png",
+      logo: "/lovable-uploads/61285a54-795a-4658-a993-aa3b567c34e6.png",
       quote: "Hypertype transformed our customer service. Our support team now resolves technical inquiries in 75% less time, dramatically improving customer satisfaction while reducing costs.",
       person: "Sarah Johnson, Head of Customer Support"
     },
