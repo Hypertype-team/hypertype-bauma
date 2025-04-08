@@ -12,7 +12,7 @@ const CustomerStories = () => {
     },
     {
       name: "GlobalEquip Manufacturing",
-      logo: "/lovable-uploads/4bf29358-ac97-4c98-94fd-b6afa234ceb7.png",
+      logo: "/lovable-uploads/18e746c3-ea14-4381-8d1e-acac898e1b02.png",
       quote: "Before Hypertype, our sales team spent hours searching for technical specifications. Now they get instant answers, closing deals 30% faster and with higher accuracy.",
       person: "Michael Chen, Sales Director"
     }
