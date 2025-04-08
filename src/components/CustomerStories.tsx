@@ -23,7 +23,7 @@ const CustomerStories = () => {
     },
     {
       name: "Bauma Equipment",
-      logo: "/lovable-uploads/4bf29358-ac97-4c98-94fd-b6afa234ceb7.png",
+      logo: "/lovable-uploads/ffb57380-8336-4dc7-b3d2-d1d2fa27a382.png",
     }
   ];
 
