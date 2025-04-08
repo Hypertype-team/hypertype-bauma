@@ -1,85 +1,84 @@
-
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-
 const HeroSection = () => {
   const scrollToFeatures = () => {
     const featuresSection = document.getElementById('features');
-    featuresSection?.scrollIntoView({ behavior: 'smooth' });
+    featuresSection?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-20 md:pt-28">
+  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-20 md:pt-28">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent opacity-30" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(71,118,230,0.1)_0%,transparent_100%)] animate-gradient-shift bg-[length:200%_200%]" />
       </div>
       
       <div className="container mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-thin mb-4 md:mb-6 bg-gradient-to-r from-[#535050] to-white bg-clip-text text-transparent px-4"
-          >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.6
+      }} className="text-center">
+          <motion.h1 initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          delay: 0.4
+        }} className="text-4xl sm:text-5xl md:text-7xl font-thin mb-4 md:mb-6 bg-gradient-to-r from-[#535050] to-white bg-clip-text text-transparent px-4">
             Empower Manufacturing Support
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto bg-gradient-to-r from-[#eec5bd] to-[#96a6fd] bg-clip-text text-transparent px-4"
-          >
+          <motion.p initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          delay: 0.6
+        }} className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto bg-gradient-to-r from-[#eec5bd] to-[#96a6fd] bg-clip-text text-transparent px-4">
             AI-powered knowledge management for machinery manufacturers
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-base md:text-lg text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed px-4"
-          >
+          <motion.p initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          delay: 0.8
+        }} className="text-base md:text-lg text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
             Hypertype syncs all your technical documentation, manuals, and catalogs into an 
             AI organizational brain, empowering your sales, service, and support teams to 
             respond to customer inquiries in seconds instead of minutes.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="flex flex-col sm:flex-row justify-center gap-4 mb-16 md:mb-20 px-4"
-          >
-            <Button
-              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-6 text-base md:text-lg rounded-lg w-full sm:w-auto"
-              onClick={() => window.open('https://hypertype.fillout.com/talktosales?_gl=1*fyovem*_gcl_au*MTQxOTAzNDA1OC4xNzMxNTgzNTYz', '_blank')}
-            >
+          <motion.div initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          delay: 1
+        }} className="flex flex-col sm:flex-row justify-center gap-4 mb-16 md:mb-20 px-4">
+            <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white px-6 py-6 text-base md:text-lg rounded-lg w-full sm:w-auto" onClick={() => window.open('https://hypertype.fillout.com/talktosales?_gl=1*fyovem*_gcl_au*MTQxOTAzNDA1OC4xNzMxNTgzNTYz', '_blank')}>
               Get Started
             </Button>
-            <Button
-              variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 px-6 py-6 text-base md:text-lg rounded-lg w-full sm:w-auto"
-              onClick={scrollToFeatures}
-            >
+            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-6 py-6 text-base md:text-lg rounded-lg w-full sm:w-auto" onClick={scrollToFeatures}>
               Learn More
             </Button>
           </motion.div>
 
           {/* Logos Section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="mt-8 md:mt-16"
-          >
-            <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">Trusted by leading manufacturers</p>
+          <motion.div initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          delay: 1.2
+        }} className="mt-8 md:mt-16">
+            <p className="text-base md:text-lg text-gray-400 mb-6 md:mb-8">As Mentioned and Backed by</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 items-center justify-items-center px-4">
               <img src="/lovable-uploads/4d30b938-fed0-47b5-8014-6116fe6fa1db.png" alt="Wired" className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
               <img src="/lovable-uploads/40696f0c-0512-453e-81d7-823afb5b0525.png" alt="Breakit" className="h-12 md:h-16 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
@@ -92,8 +91,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
