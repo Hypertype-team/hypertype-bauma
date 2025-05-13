@@ -22,8 +22,23 @@
     <!-- Load Hyperchat configuration and widget last -->
       
   <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="xabyRUg-apYlGyLQgLjM8";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+    window.hyperchatConfig = {
+      token: "d19568fb-fba4-415c-a39b-09e59753af71"
+    };
+
+    // Wait for the DOM to load
+    window.addEventListener("DOMContentLoaded", () => {
+      const script = document.createElement("script");
+      script.src = "https://storage.cloud.google.com/hyperchat-staging-widget/bundle.min.js";
+      script.onload = () => {
+        // If the script exposes a mount function, call it with a target
+        if (window.Hyperchat && typeof window.Hyperchat.mount === "function") {
+          window.Hyperchat.mount("#hyperchat-root");
+        }
+      };
+      document.body.appendChild(script);
+    });
+  </script>
       
   </body>
 </html>
