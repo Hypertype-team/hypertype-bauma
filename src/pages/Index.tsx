@@ -10,7 +10,6 @@ import Toolbar from "@/components/Toolbar";
 const Index = () => {
   useEffect(() => {
     document.body.style.backgroundColor = "#000000";
-    console.log("Index page mounted");
     return () => {
       document.body.style.backgroundColor = "";
     };
