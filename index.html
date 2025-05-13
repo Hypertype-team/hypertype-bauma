@@ -21,37 +21,15 @@
     
     <!-- Load Hyperchat configuration and widget last -->
       
+ <div id="root"></div>
+
 <script>
-(function() {
-  if (!window.hyperchat || window.hyperchat("getState") !== "initialized") {
-    window.hyperchat = (...args) => {
-      if (!window.hyperchat.q) window.hyperchat.q = [];
-      window.hyperchat.q.push(args);
-    };
-
-    window.hyperchat = new Proxy(window.hyperchat, {
-      get(target, prop) {
-        if (prop === "q") return target.q;
-        return (...args) => target(prop, ...args);
-      }
-    });
-  }
-
-  const onLoad = function () {
-    const script = document.createElement("script");
-    script.src = "https://storage.cloud.google.com/hyperchat-staging-widget/bundle.min.js";
-    script.id = "hyperchat-script";
-    script.dataset.token = "d19568fb-fba4-415c-a39b-09e59753af71"; // Optional
-    document.body.appendChild(script);
+  window.hyperchatConfig = {
+    token: "d19568fb-fba4-415c-a39b-09e59753af71"
   };
-
-  if (document.readyState === "complete") {
-    onLoad();
-  } else {
-    window.addEventListener("load", onLoad);
-  }
-})();
 </script>
+
+<script defer src="https://storage.cloud.google.com/hyperchat-staging-widget/bundle.min.js"></script>
       
   </body>
 </html>
