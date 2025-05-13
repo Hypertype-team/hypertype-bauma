@@ -20,24 +20,6 @@
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Load Hyperchat configuration and widget last -->
-    <script>
-      window.addEventListener('DOMContentLoaded', (event) => {
-        console.log('DOM fully loaded and parsed');
-        window.hyperchatConfig = {
-          token: "d19568fb-fba4-415c-a39b-09e59753af71"
-        };
-        
-        const script = document.createElement('script');
-        script.src = "https://storage.cloud.google.com/hyperchat-staging-widget/bundle.min.js";
-        script.defer = true;
-        script.onload = function() {
-          console.log("Hyperchat widget loaded successfully");
-        };
-        script.onerror = function() {
-          console.error("Failed to load Hyperchat widget");
-        };
-        document.body.appendChild(script);
-      });
-    </script>
+   
   </body>
 </html>
