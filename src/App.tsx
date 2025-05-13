@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -15,6 +16,9 @@ const App = () => {
     }).catch(err => {
       console.error('Error loading fonts:', err);
     });
+    
+    // Add debugging for component rendering
+    console.log('App component rendering');
   }, []);
 
   return (

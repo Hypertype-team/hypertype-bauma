@@ -9,7 +9,11 @@ const rootElement = document.getElementById("root");
 if (!rootElement) {
   console.error("Failed to find the root element");
 } else {
-  const root = createRoot(rootElement);
-  root.render(<App />);
-  console.log("React app successfully mounted");
+  try {
+    const root = createRoot(rootElement);
+    root.render(<App />);
+    console.log("React app successfully mounted");
+  } catch (error) {
+    console.error("Error rendering React app:", error);
+  }
 }
