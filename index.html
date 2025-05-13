@@ -13,24 +13,17 @@
   <body>
     <div id="root"></div>
     
-    <!-- Optional: dedicated container for Hyperchat if needed -->
-    <div id="hyperchat-root"></div>
-
-    <!-- GPT Engineer script -->
+    <!-- Load GPT Engineer script first -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-
-    <!-- React app -->
+    
+    <!-- Load the React application -->
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Hyperchat config -->
-    <script>
-      window.hyperchatConfig = {
-        token: "d19568fb-fba4-415c-a39b-09e59753af71"
-      };
-    </script>
-
-    <!-- Hyperchat widget script -->
-    <script defer src="https://storage.cloud.google.com/hyperchat-staging-widget/bundle.min.js"></script>
+    
+    <!-- Load Hyperchat configuration and widget last -->
+      
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="xabyRUg-apYlGyLQgLjM8";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
       
   </body>
 </html>
